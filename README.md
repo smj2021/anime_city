@@ -1,6 +1,10 @@
 # TEAM MGM welcomes you to Anime City
 
+
+
 Getting started [link name](target url)
+
+
 
 [Trello Board](https://trello.com/b/ehICj0Kr/weeb-city-anime)
 
@@ -10,10 +14,11 @@ Getting started [link name](target url)
 
 ### Stack: Anime City is a full-stack MERN web application using:
 
-1. MongoDB
-2. Express JS
-3. React JS
-4. Node.js
+1. JavaScript
+2. MongoDB
+3. Express JS
+4. React JS
+5. Node.js
 
 ### Additional technologies include:
 
@@ -22,3 +27,6 @@ Getting started [link name](target url)
 * Mongoose
 * Google OAuth
 * JSON Web Tokens
+
+### Next Steps
+
