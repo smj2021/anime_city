@@ -32,3 +32,9 @@ const movieSchema = new Schema({
         require: true,
     }
 })
+
+const Movie = mongoose.model('Movie', movieSchema);
+
+export {
+    Movie
+}
