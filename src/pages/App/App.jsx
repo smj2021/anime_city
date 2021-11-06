@@ -47,7 +47,11 @@ class App extends Component {
 			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle
 		}, () => {
 			fetch(this.state.searchURL)
-				
+				.then(res => res.json())
+				.then(json => this.setState({
+					anime: json,
+					animeTitle: ''
+				}))
 		})
 	}
 
