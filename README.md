@@ -1,72 +1,37 @@
-# MERN Stack with OAuth Template
+# TEAM MGM welcomes you to Anime City
 
-This is a MERN Stack template that includes JWT Authentication.
+***
 
-Use this to go build things! 🚀
+Getting started [link name](target url)
 
-## To Use This Template
+***
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+[Trello Board](https://trello.com/b/ehICj0Kr/weeb-city-anime)
 
-```bash
-git clone https://github.com/SEI-Remote-WC/mern-jwt-auth-template-no-hooks <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+***
 
-Once you are in the project directory:
+#### Anime City uses Google OAuth and JSON Web Tokens for authentication and authorization. This allows the user to create a brand new account, or login with an existing Google account and safely store the password without having to share any sensitive data with Anime City.
 
-```bash
-rm -rf .git
-```
+#### Once logged in, as a user you'll be able to utilize the full power of the Jikan API to query the Crunchyroll anime database for your favorite shows and movies. You can then make unique lists of movies and shows to suit your tastes, read summaries of the individual results returned from your search, read reviews, see what others have added to their lists, and even link to web locations to watch your favorite movies, shows, or episodes.
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+***
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+### Stack: Anime City is a full-stack MERN web application using:
 
-Re-initialize a git repository:
+1. JavaScript
+2. MongoDB
+3. Express JS
+4. React JS
+5. Node.js
 
-```bash
-git init
-```
+### Additional technologies include:
 
-Use the GitHub CLI to create a new project repository on GitHub:
+* HTML5 / CSS3
+* Bootstrap
+* Mongoose
+* Google OAuth
+* JSON Web Tokens
 
-```bash
-gh repo create <name-of-your-app-here>
-```
+***
 
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-Then, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
-
-Delete this README.md
-
-You're done!
-
-
-testing - Giorgio
+### Next Steps
