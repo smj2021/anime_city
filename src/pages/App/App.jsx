@@ -62,6 +62,7 @@ class App extends Component {
 						value={this.state.animeTitle}
 						onChange={this.handleChange}
           			/>
+					<input type="submit" value="Search" />
 				</form>
 
 			</>
