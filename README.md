@@ -15,3 +15,10 @@ Getting started [link name](target url)
 3. React JS
 4. Node.js
 
+### Additional technologies include:
+
+* HTML5 / CSS3
+* Bootstrap
+* Mongoose
+* Google OAuth
+* JSON Web Tokens
