@@ -15,6 +15,7 @@ class App extends Component {
 			baseURL: 'https://api.jikan.moe/v3/search/anime?',
 			query: 'q=',
 			animeTitle: '',
+			limit: "&limit=6",
 			searchURL: '',
 			user: authService.getUser()
 		}
@@ -36,20 +37,20 @@ class App extends Component {
 
 	handleChange = (e) => {
 		this.setState({
-		  [e.target.id]: e.target.value
+			[e.target.id]: e.target.value
 		})
-	  }
+	}
 
-	
+
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.setState({
-			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle
+			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle + this.state.limit
 		}, () => {
 			fetch(this.state.searchURL)
 				.then(res => res.json())
 				.then(json => this.setState({
-					anime: json,
+					animes: json,
 					animeTitle: ''
 				}))
 				.catch(err => console.log(err))
@@ -74,21 +75,21 @@ class App extends Component {
 					exact path="/users"
 					render={() =>
 						user ? <Users /> : <Redirect to='/login' />
-					} 
+					}
 				/>
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
-					<input 
+					<input
 						id="animeTitle"
 						type="text"
 						value={this.state.animeTitle}
 						onChange={this.handleChange}
-          			/>
+					/>
 					<input type="submit" value="Search" />
 				</form>
 				<a href={this.state.searchURL}>{this.state.searchURL}</a>
 
-				{(this.state.anime) ? <AnimeInfo anime={this.state.anime}/> : ''}
+				{(this.state.animes) ? <AnimeInfo animes={this.state.animes.results} /> : ''}
 			</>
 		)
 	}
