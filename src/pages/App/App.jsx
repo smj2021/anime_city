@@ -52,6 +52,7 @@ class App extends Component {
 					anime: json,
 					animeTitle: ''
 				}))
+				.catch(err => console.log(err))
 		})
 	}
 
