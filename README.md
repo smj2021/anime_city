@@ -35,4 +35,3 @@ Getting started [link name](target url)
 ***
 
 ### Next Steps
-
