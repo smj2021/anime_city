@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 class AnimeInfo extends Component {
     render() {
+        console.log(this.props.animes)
         return (
             <div>
                 <h1>{this.props.animes.results[0].title}</h1>

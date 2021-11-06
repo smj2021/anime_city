@@ -89,7 +89,7 @@ class App extends Component {
 				</form>
 				<a href={this.state.searchURL}>{this.state.searchURL}</a>
 
-				{(this.state.animes) ? <AnimeInfo animes={this.state.animes} /> : ''}
+				{(this.state.animes) ? <AnimeInfo animes={this.state.animes.results} /> : ''}
 			</>
 		)
 	}
