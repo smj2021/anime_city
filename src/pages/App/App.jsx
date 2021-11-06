@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import AnimeInfo from './AnimeInfo'
+import AnimeInfo from './AnimeInfo'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
