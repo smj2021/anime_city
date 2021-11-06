@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import AnimeInfo from './AnimeInfo'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
@@ -8,9 +9,20 @@ import * as authService from '../../services/authService'
 import Users from '../Users/Users'
 
 class App extends Component {
-	state = {
-		user: authService.getUser()
-	}
+	constructor() {
+		super()
+		this.state = {
+		  baseURL: 'https://api.jikan.moe/v3/search/anime?',
+		  query: 'q=',
+		  animeTitle: '',
+		  searchURL: '',
+		  user: authService.getUser()
+		}
+	  }
+
+	// state = {
+	// 	user: authService.getUser()
+	// }
 
 	handleLogout = () => {
 		authService.logout()
