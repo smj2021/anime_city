@@ -43,6 +43,9 @@ class App extends Component {
 	
 	handleSubmit = (e) => {
 		e.preventDefault();
+		this.setState({
+			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle
+		})
 	}
 
 	render() {
