@@ -16,6 +16,8 @@ class AnimeInfo extends Component {
                         : <p><b>Aired: </b>{this.props.anime.results[0].start_date} to {this.props.anime.results[0].end_date}</p>
                     }
                     <p><b>Rated: </b>{this.props.anime.results[0].rated}</p>
+                    <p><b>Synopsis: </b>{this.props.anime.results[0].synopsis}</p>
+                    <a href={this.props.anime.results[0].url}>More info</a>
             </div>
         )
     }
