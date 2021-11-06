@@ -5,15 +5,19 @@ const Schema = mongoose.Schema;
 const movieSchema = new Schema({
     mal_id: {
         type: Number,
-        required: true,
+        require: true,
     },
     url: {
         type: String,
-        required: true,
+        require: true,
     },
     image_url: {
         type: String,
-        required: true,
+        require: true,
+    },
+    title: {
+        type: String,
+        require: true
     },
     
 })
