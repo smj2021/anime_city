@@ -50,7 +50,7 @@ class App extends Component {
 			fetch(this.state.searchURL)
 				.then(res => res.json())
 				.then(json => this.setState({
-					anime: json,
+					animes: json,
 					animeTitle: ''
 				}))
 				.catch(err => console.log(err))
@@ -89,7 +89,7 @@ class App extends Component {
 				</form>
 				<a href={this.state.searchURL}>{this.state.searchURL}</a>
 
-				{(this.state.anime) ? <AnimeInfo anime={this.state.anime} /> : ''}
+				{(this.state.animes) ? <AnimeInfo animes={this.state.animes} /> : ''}
 			</>
 		)
 	}
