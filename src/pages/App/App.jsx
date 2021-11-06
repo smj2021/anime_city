@@ -34,6 +34,12 @@ class App extends Component {
 		this.setState({ user: authService.getUser() })
 	}
 
+	handleChange = (e) => {
+		this.setState({
+		  [e.target.id]: e.target.value
+		})
+	  }
+
 	render() {
 		const { user } = this.state
 		return (
