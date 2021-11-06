@@ -45,7 +45,7 @@ class App extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.setState({
-			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle
+			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle + this.state.limit
 		}, () => {
 			fetch(this.state.searchURL)
 				.then(res => res.json())
