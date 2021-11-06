@@ -45,6 +45,9 @@ class App extends Component {
 		e.preventDefault();
 		this.setState({
 			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle
+		}, () => {
+			fetch(this.state.searchURL)
+				
 		})
 	}
 
