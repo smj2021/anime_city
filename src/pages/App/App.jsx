@@ -12,13 +12,13 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-		  baseURL: 'https://api.jikan.moe/v3/search/anime?',
-		  query: 'q=',
-		  animeTitle: '',
-		  searchURL: '',
-		  user: authService.getUser()
+			baseURL: 'https://api.jikan.moe/v3/search/anime?',
+			query: 'q=',
+			animeTitle: '',
+			searchURL: '',
+			user: authService.getUser()
 		}
-	  }
+	}
 
 	// state = {
 	// 	user: authService.getUser()
@@ -40,19 +40,23 @@ class App extends Component {
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
 				<Route exact path='/'>
-          <Landing user={user} />
-        </Route>
+					<Landing user={user} />
+				</Route>
 				<Route exact path='/signup'>
-          <Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin}/>
-        </Route>
+					<Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin} />
+				</Route>
 				<Route exact path='/login'>
-          <Login handleSignupOrLogin={this.handleSignupOrLogin} history={this.props.history}/>
-        </Route>
-				<Route 
+					<Login handleSignupOrLogin={this.handleSignupOrLogin} history={this.props.history} />
+				</Route>
+				<Route
 					exact path="/users"
-					render={()=> 
-						user ? <Users /> : <Redirect to='/login'/>
-				}/>
+					render={() =>
+						user ? <Users /> : <Redirect to='/login' />
+					} 
+				/>
+				<form onSubmit={this.handleSubmit}>
+					
+				</form>
 
 			</>
 		)
