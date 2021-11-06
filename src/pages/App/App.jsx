@@ -55,7 +55,13 @@ class App extends Component {
 					} 
 				/>
 				<form onSubmit={this.handleSubmit}>
-					
+					<label htmlFor="animeTitle">Title</label>
+					<input 
+						id="animeTitle"
+						type="text"
+						value={this.state.animeTitle}
+						onChange={this.handleChange}
+          			/>
 				</form>
 
 			</>
