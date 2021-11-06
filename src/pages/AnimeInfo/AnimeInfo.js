@@ -22,3 +22,5 @@ class AnimeInfo extends Component {
         )
     }
 }
+
+export default AnimeInfo;
