@@ -64,6 +64,7 @@ class App extends Component {
           			/>
 					<input type="submit" value="Search" />
 				</form>
+				<a href={this.state.searchURL}>{this.state.searchURL}</a>
 
 			</>
 		)
