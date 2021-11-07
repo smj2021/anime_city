@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AnimeInfo from '../../pages/AnimeInfo/AnimeInfo'
+import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
@@ -89,7 +89,7 @@ class App extends Component {
 				</form>
 				<a href={this.state.searchURL}>{this.state.searchURL}</a>
 
-				{(this.state.animes) ? <AnimeInfo animes={this.state.animes.results} /> : ''}
+				{(this.state.animes) ? <AnimeResults animes={this.state.animes.results} /> : ''}
 			</>
 		)
 	}

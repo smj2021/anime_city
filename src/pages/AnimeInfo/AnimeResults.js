@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class AnimeInfo extends Component {
+class AnimeResults extends Component {
     render() {
         console.log(this.props.animes)
         return (
@@ -15,4 +15,4 @@ class AnimeInfo extends Component {
     }
 }
 
-export default AnimeInfo;
+export default AnimeResults;
