@@ -11,6 +11,7 @@ class AnimeDetails extends Component {
         return (
             <div>
                 <h1>{animeDetails.title}</h1>
+                <img src={animeDetails.image_url} alt="" />
                 <p>{animeDetails.synopsis}</p>
                 <a href="/">Return</a>
 
