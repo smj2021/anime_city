@@ -6,9 +6,9 @@ class AnimeResults extends Component {
         console.log(this.props.animes)
         return (
             <>
-                {this.props.animes.map(anime => (
-                    <div>
-                        <Link>
+                {this.props.animes.map((anime, idx) => (
+                    <div className='anime' key={idx} >
+                        <Link to='anime' state={{ anime }}>
                             <h2>{anime.title}</h2>
                             <img src={anime.image_url} alt="" />
                         </Link>
