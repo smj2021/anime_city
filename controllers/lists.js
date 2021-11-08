@@ -1,7 +1,12 @@
 import { List } from '../models/List.js'
 
-function newList(req, res){
-    const newList = new List();
-    
 
+function index(req, res){
+    List.find({})
+    .then(lists => {
+        res.status(200).json(lists)
+    })
+    .catch(err => {
+        res.json(err)
+    })
 }
