@@ -8,7 +8,12 @@ class AnimeResults extends Component {
             <>
                 {this.props.animes.map((anime, idx) => (
                     <div className='anime' key={idx} >
-                        <Link to='anime' state={{ anime }}>
+                        <Link 
+                            to={{
+                                pathname: `/anime`,
+                                state: { anime }
+                            }}
+                        >
                             <h2>{anime.title}</h2>
                             <img src={anime.image_url} alt="" />
                         </Link>
