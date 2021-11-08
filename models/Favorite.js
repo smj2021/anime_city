@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const favoriteSchema = new Schema ({
     id: Number,
-    // user: 
+    // need to associate with user user: 
 })
 
 const Favorite = mongoose.model('Favorite', favoriteSchema)
