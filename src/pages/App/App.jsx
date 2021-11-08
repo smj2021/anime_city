@@ -42,8 +42,6 @@ class App extends Component {
 		})
 	}
 
-
-
 	handleSubmit = (e) => {
 		console.log(this.props);
 		e.preventDefault();
