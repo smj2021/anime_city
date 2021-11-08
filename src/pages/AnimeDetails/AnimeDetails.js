@@ -12,23 +12,19 @@ class AnimeDetails extends Component {
             <div>
                 <h1>{animeDetails.title}</h1>
                 <img src={animeDetails.image_url} alt="" />
-                <p>{animeDetails.synopsis}</p>
-                <a href="/">Return</a>
+                <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
                 <p><b>Type:</b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
                     ? <p><b>Episodes: </b>{animeDetails.episodes}</p>
                     : ''}
-
-
-
-{/* 
-                {this.props.animes.results.airing
-                    ? <p><b>Airing: </b>{this.props.animes.results.start_date} - present</p>
-                    : <p><b>Aired: </b>{this.props.animes.results.start_date} to {this.props.animes.results.end_date}</p>
+                {animeDetails.airing
+                    ? <p><b>Airing: </b>{animeDetails.start_date} - present</p>
+                    : <p><b>Aired: </b>{animeDetails.start_date} to {animeDetails.end_date}</p>
                 }
-                <p><b>Rated: </b>{this.props.animes.results.rated}</p>
-                <p><b>Synopsis: </b>{this.props.animes.results.synopsis}</p>
-                <a href={this.props.animes.results.url}>More Info</a> */}
+                <p><b>Rated: </b>{animeDetails.rated}</p>
+                <a href={animeDetails.url}>More Info</a>
+                <br /><br />
+                <a href="/">Return</a>
             </div>
         )
     }
