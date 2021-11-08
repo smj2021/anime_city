@@ -11,6 +11,14 @@ function index(req, res) {
         })
 }
 
+function show(req, res) {
+    List.findById(req.params.id)
+        .then(list => {
+            res.json(list)
+        })
+}
+
+
 function create(req, res) {
     List.create(req.body)
         .then(list => {
@@ -23,5 +31,6 @@ function create(req, res) {
 
 
 export {
-    index
+    index,
+    create
 }
