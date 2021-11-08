@@ -10,7 +10,6 @@ class AnimeDetails extends Component {
         const { animeDetails } = this.state
         return (
             <div>
-                <h1>anime details</h1>
                 <h1>{animeDetails.title}</h1>
                 <p>{animeDetails.synopsis}</p>
                 <a href="/">Return</a>

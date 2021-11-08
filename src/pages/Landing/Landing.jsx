@@ -1,11 +1,11 @@
 import styles from './Landing.module.css'
+import AnimeResults from '../AnimeResults/AnimeResults'
 
-const Landing = ({user}) => {
+const Landing = (props) => {
+  console.log(props);
   return (
     <main className={styles.container}>
-      <h1>
-        hello, {user ? user.name : "friend"}
-      </h1>
+      {(props.animes) ? <AnimeResults animes={props.animes.results} /> : ''}
     </main>
   )
 }

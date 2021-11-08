@@ -43,7 +43,9 @@ class App extends Component {
 	}
 
 
+
 	handleSubmit = (e) => {
+		console.log(this.props);
 		e.preventDefault();
 		this.setState({
 			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle + this.state.limit
@@ -56,6 +58,11 @@ class App extends Component {
 				}))
 				.catch(err => console.log(err))
 		})
+		if (this.props.history.location.pathname === '/') {
+			console.log('home');
+		} else {
+			this.props.history.push('/')
+		}
 	}
 
 	render() {
@@ -63,33 +70,9 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
-				<Route exact path='/'>
-					<Landing user={user} />
-				</Route>
-				<Route exact path='/signup'>
-					<Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin} />
-				</Route>
-				<Route exact path='/login'>
-					<Login handleSignupOrLogin={this.handleSignupOrLogin} history={this.props.history} />
-				</Route>
-				<Route
-					exact path="/users"
-					render={() =>
-						user ? <Users /> : <Redirect to='/login' />
-					}
-				/>
-				<Route
-					exact path='/anime'
-					render={({ location }) =>
-						<AnimeDetails
-							location={location}
-						/>
-					}
-				/>
-
-
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
+					{/* <Redirect to="anime-results"/> */}
 					<input
 						id="animeTitle"
 						type="text"
@@ -98,8 +81,40 @@ class App extends Component {
 					/>
 					<input type="submit" value="Search" />
 				</form>
+				
+				<Route exact path='/'>
+					<Landing user={user} animes={this.state.animes} />
+				</Route>
 
-				{(this.state.animes) ? <AnimeResults animes={this.state.animes.results} /> : ''}
+				<Route exact path='/signup'>
+					<Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin} />
+				</Route>
+
+				<Route exact path='/login'>
+					<Login handleSignupOrLogin={this.handleSignupOrLogin} history={this.props.history} />
+				</Route>
+
+				<Route
+					exact path="/users"
+					render={() =>
+						user ? <Users /> : <Redirect to='/login' />
+					}
+				/>
+				<Route
+					exact path='/anime-results'
+					render={() =>
+						<AnimeResults animes={this.state.animes}/>
+					}
+				/>
+
+				<Route
+					exact path='/anime'
+					render={({ location }) =>
+						<AnimeDetails
+							location={location}
+						/>
+					}
+				/>	
 			</>
 		)
 	}
