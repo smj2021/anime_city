@@ -17,7 +17,6 @@ class AnimeResults extends Component {
                             <h2>{anime.title}</h2>
                             <img src={anime.image_url} alt="" />
                         </Link>
-
                     </div>
                 ))}
             </>

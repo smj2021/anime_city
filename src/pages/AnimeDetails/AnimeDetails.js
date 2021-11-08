@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class AnimeDetails extends Component {
     state = {
         animeDetails: this.props.location.state.anime
+    }
+
+    addToFavorites = (e) => {
+        e.preventDefault()
+        const data = {id: e.target.firstChild.value};
+        fetch('http://localhost:3001/api/favorites', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
     }
 
     render() {
@@ -24,7 +37,11 @@ class AnimeDetails extends Component {
                 <p><b>Rated: </b>{animeDetails.rated}</p>
                 <a href={animeDetails.url}>More Info</a>
                 <br /><br />
-                <a href="/">Return</a>
+                <form onSubmit={this.addToFavorites}>
+                    <input type="hidden" value={animeDetails.mal_id} />
+                    <button type="submit">Add to Favorites</button>
+                </form>
+                <Link to="/">Return</Link>
             </div>
         )
     }
