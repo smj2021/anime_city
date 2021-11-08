@@ -32,5 +32,6 @@ function create(req, res) {
 
 export {
     index,
+    show,
     create
 }
