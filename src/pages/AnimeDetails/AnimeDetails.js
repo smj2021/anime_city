@@ -14,12 +14,12 @@ class AnimeDetails extends Component {
                 <img src={animeDetails.image_url} alt="" />
                 <p>{animeDetails.synopsis}</p>
                 <a href="/">Return</a>
+                <p><b>Type:</b>{animeDetails.type}</p>
 
 
-                {/* <h1>{this.props.animes.results.title}</h1>
-                <img src={this.props.animes.results.image_url} alt="" />
-                <p><b>Type:</b>{this.props.animes.results.type}</p>
-                {this.props.animes.results.type === "TV"
+
+
+                {/* {this.props.animes.results.type === "TV"
                     ? <p><b>Episodes: </b>{this.props.animes.results.episodes}</p>
                     : ''}
                 {this.props.animes.results.airing
