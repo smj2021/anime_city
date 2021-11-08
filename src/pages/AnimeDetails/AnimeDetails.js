@@ -6,6 +6,10 @@ class AnimeDetails extends Component {
         // url: 
     }
 
+    async componentDidMount() {
+        const animeDetails = await 
+    }
+
     render() {
         return (
             <div>
