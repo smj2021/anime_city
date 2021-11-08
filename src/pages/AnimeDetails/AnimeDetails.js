@@ -15,13 +15,13 @@ class AnimeDetails extends Component {
                 <p>{animeDetails.synopsis}</p>
                 <a href="/">Return</a>
                 <p><b>Type:</b>{animeDetails.type}</p>
-
-
-
-
-                {/* {this.props.animes.results.type === "TV"
-                    ? <p><b>Episodes: </b>{this.props.animes.results.episodes}</p>
+                {animeDetails.type === "TV"
+                    ? <p><b>Episodes: </b>{animeDetails.episodes}</p>
                     : ''}
+
+
+
+{/* 
                 {this.props.animes.results.airing
                     ? <p><b>Airing: </b>{this.props.animes.results.start_date} - present</p>
                     : <p><b>Aired: </b>{this.props.animes.results.start_date} to {this.props.animes.results.end_date}</p>
