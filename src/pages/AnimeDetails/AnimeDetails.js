@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class AnimeDetails extends Component {
     state = {
-        AnimeDetails: {},
-        url: 
+        animeDetails: {},
+        // url: 
     }
 
     render() {
