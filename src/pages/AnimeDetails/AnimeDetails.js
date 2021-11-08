@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 
 class AnimeDetails extends Component {
     state = {
-        animeDetails: {},
-        url: this.props.location
+        animeDetails: this.props.location.state.anime
     }
 
-    // async componentDidMount() {
-    //     const animeDetails = await 
-    // }
-
     render() {
-        console.log('this.props.location: ', this.state.url);
+        console.log('this.state.animeDetails is: ', this.state.animeDetails);
         return (
             <div>
                 <h1>anime details</h1>
+                <h1>{this.state.animeDetails.title}</h1>
+                <p>{this.state.animeDetails.synopsis}</p>
+
+                
                 {/* <h1>{this.props.animes.results.title}</h1>
                 <img src={this.props.animes.results.image_url} alt="" />
                 <p><b>Type:</b>{this.props.animes.results.type}</p>
