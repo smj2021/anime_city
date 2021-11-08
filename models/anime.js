@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 //! I added what what returned from the Jikan API just so we have something to work from. We can adjust this as needed and don't have to require everything or even use everything. -Mike
 
-const movieSchema = new Schema({
+const animeSchema = new Schema({
     mal_id: {
         type: Number,
         require: true,
@@ -35,8 +35,8 @@ const movieSchema = new Schema({
     }
 })
 
-const Movie = mongoose.model('Movie', movieSchema);
+const Anime = mongoose.model('Anime', animeSchema);
 
 export {
-    Movie
+    Anime
 }
