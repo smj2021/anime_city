@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 function AnimeLists(props) {
     let lists = [];
-    
+    for (let i = 0; i < props.lists; i++) {
+        lists.push(<List key={i} />)
+    }
 }
 
 export default AnimeLists;
