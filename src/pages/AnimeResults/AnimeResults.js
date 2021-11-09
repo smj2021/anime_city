@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 class AnimeResults extends Component {
     render() {
-        console.log(this.props.animes)
         return (
             <>
                 {this.props.animes.map((anime, idx) => (

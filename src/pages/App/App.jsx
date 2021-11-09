@@ -69,6 +69,7 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
+				
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
 					<input
