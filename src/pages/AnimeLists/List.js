@@ -12,5 +12,7 @@ class List extends Component {
     createList = () => {
         this.setState({ lists: this.state.lists + 1 });
     }
-    
+    deleteList = () => {
+        this.setState({ lists: this.state.lists - 1 })
+    }
 }
