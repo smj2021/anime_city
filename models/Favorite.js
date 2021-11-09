@@ -3,8 +3,13 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const favoriteSchema = new Schema ({
-    id: Number,
-    // need to associate with user user: 
+    id: {
+        type: Number
+    },
+    addedBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    }
 })
 
 const Favorite = mongoose.model('Favorite', favoriteSchema)
