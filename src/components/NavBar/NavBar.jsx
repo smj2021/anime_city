@@ -11,7 +11,10 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 								<Link to="/">Home</Link>
 							</li>
-	
+							<li>
+								<Link to="/favorites">Favorites</Link>
+							</li>
+							
 							<li>Welcome, {user.name}</li>
 							<li>
 								<Link to="/users">Users</Link>
