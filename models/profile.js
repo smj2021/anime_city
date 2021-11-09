@@ -1,8 +1,5 @@
 import mongoose from 'mongoose'
 
-export {
-  Profile
-}
 
 const profileSchema = new mongoose.Schema(
   {
@@ -12,6 +9,10 @@ const profileSchema = new mongoose.Schema(
   {
     timestamps: true,
   }
-)
-
-const Profile = mongoose.model('Profile', profileSchema)
+  )
+  
+  const Profile = mongoose.model('Profile', profileSchema)
+  
+  export {
+    Profile
+  }
