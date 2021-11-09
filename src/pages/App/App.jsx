@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
+import Favorites from '../../pages/Favorites/Favorites'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
@@ -99,6 +100,7 @@ class App extends Component {
 						user ? <Users /> : <Redirect to='/login' />
 					}
 				/>
+
 				<Route
 					exact path='/anime-results'
 					render={() =>
@@ -112,6 +114,13 @@ class App extends Component {
 						<AnimeDetails
 							location={location}
 						/>
+					}
+				/>
+
+				<Route
+					exact path='/favorites'
+					render={() =>
+						<Favorites />
 					}
 				/>	
 			</>
