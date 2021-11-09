@@ -29,9 +29,16 @@ function create(req, res) {
         })
 }
 
+function update(req, res) {
+    List.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((list) => {
+            res.json(list)
+        })
+}
 
 export {
     index,
     show,
-    create
+    create,
+    update
 }
