@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 
 class AnimeDetails extends Component {
     state = {
-        animeDetails: this.props.location.state.anime // passed from <Link to={{pathname: `/anime`, state: { anime }}}>
+        // passed from <Link to={{pathname: `/anime`, state: { anime }}}>
+        animeDetails: this.props.location.state.anime 
     }
 
     addToFavorites = (e) => {
         e.preventDefault()
         const data = {id: e.target.firstChild.value};
+        // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
         fetch('http://localhost:3001/api/favorites', {
             method: 'POST',
             headers: {
