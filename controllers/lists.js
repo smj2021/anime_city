@@ -29,9 +29,25 @@ function create(req, res) {
         })
 }
 
+function update(req, res) {
+    List.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((list) => {
+            res.json(list)
+        })
+}
+
+function deleteList(req, res) {
+    List.findByIdAndDelete(req.params.id)
+        .then(list => {
+            res.json(list)
+        })
+}
+
 
 export {
     index,
     show,
-    create
+    create,
+    update,
+    deleteList as delete
 }
