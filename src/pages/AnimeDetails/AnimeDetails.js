@@ -14,7 +14,8 @@ class AnimeDetails extends Component {
         fetch('http://localhost:3001/api/favorites', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
             },
             // turns js object to json string
             body: JSON.stringify(data)
