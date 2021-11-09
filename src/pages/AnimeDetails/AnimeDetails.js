@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 class AnimeDetails extends Component {
     state = {
-        animeDetails: this.props.location.state.anime
+        animeDetails: this.props.location.state.anime // passed from <Link to={{pathname: `/anime`, state: { anime }}}>
     }
 
     addToFavorites = (e) => {
