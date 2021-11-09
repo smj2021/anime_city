@@ -43,7 +43,7 @@ class App extends Component {
 	}
 
 	handleSubmit = (e) => {
-		console.log(this.props);
+		console.log('this.props is: ', this.props);
 		e.preventDefault();
 		this.setState({
 			searchURL: this.state.baseURL + this.state.query + this.state.animeTitle + this.state.limit
@@ -56,6 +56,7 @@ class App extends Component {
 				}))
 				.catch(err => console.log(err))
 		})
+		// our results are only displayed on '/' so we'll only see our results if we're on '/'. If we're searching while we are on '/anime', we need to redirect to '/' after submitting so we can see our results
 		if (this.props.history.location.pathname === '/') {
 			console.log('home');
 		} else {
@@ -70,7 +71,6 @@ class App extends Component {
 				<NavBar user={user} handleLogout={this.handleLogout} />
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
-					{/* <Redirect to="anime-results"/> */}
 					<input
 						id="animeTitle"
 						type="text"

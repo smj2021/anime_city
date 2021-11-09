@@ -6,7 +6,6 @@ function create(req, res) {
         if(err) return res.json({ok: false});
         console.log(fav);
         res.json({ok: true, obj: fav})
-
     })
 }
 
