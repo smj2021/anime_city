@@ -16,10 +16,11 @@ class AnimeDetails extends Component {
             headers: {
                 'Content-Type': 'application/json'
             },
+            // turns js object to json string
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(json => console.log(json));
+            .then(res => res.json())
+            .then(json => console.log(json));
     }
 
     render() {
