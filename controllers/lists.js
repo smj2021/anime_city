@@ -36,9 +36,18 @@ function update(req, res) {
         })
 }
 
+function deleteList(req, res) {
+    List.findByIdAndDelete(req.params.id)
+        .then(list => {
+            res.json(list)
+        })
+}
+
+
 export {
     index,
     show,
     create,
-    update
+    update,
+    deleteList as delete
 }
