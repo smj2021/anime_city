@@ -16,6 +16,7 @@ function create(req, res) {
                     profile.save(function(err) {
                         // console.log(err);
                     })
+                    .catch(err => console.log(err))
                     console.log('profile is: ', profile);
                 })
         })
