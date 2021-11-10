@@ -1,9 +1,6 @@
 import { Router } from 'express'
 import * as authCtrl from '../controllers/auth.js'
 
-export {
-  router
-}
 
 const router = Router()
 
@@ -12,3 +9,7 @@ router.post('/signup', authCtrl.signup)
 router.post('/login', authCtrl.login)
 
 /*---------- Protected Routes ----------*/
+
+export {
+  router
+}

@@ -14,9 +14,6 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 								<Link to="/favorites">Favorites</Link>
 							</li>
-							<li>
-								<Link to="/lists">Lists</Link>
-							</li>
 							<li>Welcome, {user.name}</li>
 							<li>
 								<Link to="/users">Users</Link>
