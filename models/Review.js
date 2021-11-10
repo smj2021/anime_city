@@ -9,5 +9,8 @@ const reviewsSchema = new Schema({
     id:{
         type: String,
     },
-    
+    addedBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    }
 })
