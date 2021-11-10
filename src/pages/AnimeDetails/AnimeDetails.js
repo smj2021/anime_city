@@ -44,7 +44,7 @@ class AnimeDetails extends Component {
                 <a href={animeDetails.url}>More Info</a>
                 <br /><br />
                 <form onSubmit={this.addToFavorites}>
-                    <input type="hidden" value={animeDetails.mal_id} />
+                    <input type="hidden" name="id" value={animeDetails.mal_id} />
                     <button type="submit">Add to Favorites</button>
                 </form>
                 <Link to="/">Return</Link>

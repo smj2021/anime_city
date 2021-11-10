@@ -2,10 +2,10 @@ import { Favorite } from '../models/favorite.js'
 
 function create(req, res) {
     console.log('req.user is: ', req.user);
-    // console.log('id', req.body.id);
-    Favorite.create({id:req.body.id}, function(err, fav) {
+    console.log('id is: ', req.body.id);
+    Favorite.create((req.body), function(err, fav) {
         if(err) return res.json({ok: false});
-        // console.log(fav);
+        console.log('fav is: ', fav);
         res.json({ok: true, obj: fav})
     })
 }
