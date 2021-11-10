@@ -252,19 +252,10 @@ class Home extends Component {
                     <div class="search-model">
                         <div class="h-100 d-flex align-items-center justify-content-center">
                             <div class="search-close-switch"><i class="icon_close"></i></div>
-                            <form class="search-model-form">
-                                <input type="text" id="search-input" placeholder="Search here....."/>
+                            <form class="search-model-form" onSubmit={this.handleSubmit}>
+                                <input type="text" id="search-input" value={this.state.animeTitle}
+                                    onChange={this.handleChange} placeholder="Search here....." />
                             </form>
-                            <form onSubmit={this.handleSubmit}>
-					<label htmlFor="animeTitle">Title</label>
-					<input
-						id="animeTitle"
-						type="text"
-						value={this.state.animeTitle}
-						onChange={this.handleChange}
-					/>
-					<input type="submit" value="Search" />
-				</form>
                         </div>
                     </div>
                 </body>
