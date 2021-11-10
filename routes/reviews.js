@@ -7,6 +7,8 @@ const router = Router();
 router.use(decodeUserFromToken);
 router.post('/', checkAuth, reviewsCtrl.create);
 router.get('/:id', checkAuth, reviewsCtrl.show);
+router.post('/rating/:anime_id', checkAuth, reviewsCtrl.rating)
+
 
 export {
     router
