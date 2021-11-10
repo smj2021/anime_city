@@ -9,15 +9,19 @@ const profileSchema = new mongoose.Schema(
     favorites: [{
       type: Schema.Types.ObjectId,
       ref: 'Favorite'
+    }],
+    reviews: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Review'
     }]
   },
   {
     timestamps: true,
   }
-  )
-  
-  const Profile = mongoose.model('Profile', profileSchema)
-  
-  export {
-    Profile
-  }
+)
+
+const Profile = mongoose.model('Profile', profileSchema)
+
+export {
+  Profile
+}
