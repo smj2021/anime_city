@@ -30,7 +30,13 @@ const StarRating = () => {
 const saveRating = (e, setRating) => {
     const rating = e.target.value
     setRating(rating)
-    fetch('http://localhost:3000/api/reviews')
+    fetch('http://localhost:3000/api/rating/', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem('token')
+        }
+    })
         .then(res => res.json())
         .then(res => console.log(res))
         .catch(err => console.error(err))

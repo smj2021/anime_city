@@ -16,6 +16,10 @@ function create(req, res) {
         })
 }
 
+function rating(req, res){
+    res.json({ok: 'success'})
+}
+
 export {
     create
 }
