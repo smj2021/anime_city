@@ -9,6 +9,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import Users from '../Users/Users'
+import Home from './Home'
 
 class App extends Component {
 	constructor() {
@@ -69,8 +70,9 @@ class App extends Component {
 		const { user } = this.state
 		return (
 			<>
+				<Home />
 				<NavBar user={user} handleLogout={this.handleLogout} />
-				
+
 				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
 					<input
@@ -81,7 +83,7 @@ class App extends Component {
 					/>
 					<input type="submit" value="Search" />
 				</form>
-				
+
 				<Route exact path='/'>
 					<Landing user={user} animes={this.state.animes} />
 				</Route>
@@ -104,7 +106,7 @@ class App extends Component {
 				<Route
 					exact path='/anime-results'
 					render={() =>
-						<AnimeResults animes={this.state.animes}/>
+						<AnimeResults animes={this.state.animes} />
 					}
 				/>
 
@@ -122,7 +124,7 @@ class App extends Component {
 					render={() =>
 						<Favorites />
 					}
-				/>	
+				/>
 			</>
 		)
 	}
