@@ -1,6 +1,14 @@
 import { Favorite } from '../models/favorite.js'
 import { Profile } from '../models/profile.js'
 
+function index(req, res) {
+    Profile.findById(req.user.profile._id)
+        .populate('favorites')
+        .then(profile => {
+            res.json(profile)
+        })
+}
+
 function create(req, res) {
     // console.log('req.user is: ', req.user);
     // console.log('req.user.profile is: ', req.user.profile);
@@ -11,7 +19,7 @@ function create(req, res) {
         .then(favorite => {
             // console.log('req.user.profile is: ', req.user.profile);
             Profile.findById(req.user.profile)
-                .populate('favorites')
+                //? should .populate('favorites') happen here or in an index function
                 .then(profile => {
                     profile.favorites.push(favorite)
                     profile.save(function(err) {
@@ -23,5 +31,6 @@ function create(req, res) {
 }
 
 export {
+    index,
     create
 }
