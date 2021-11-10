@@ -7,6 +7,7 @@ class Favorites extends Component {
     }
 
     componentDidMount() {
+        // it's port 3001 because that's the port our server is listening to
         fetch('http://localhost:3001/api/favorites', {
             headers: {
                 'Authorization': localStorage.getItem('token')
@@ -17,7 +18,6 @@ class Favorites extends Component {
                 this.setState({
                     profile: json
                 })
-                console.log('profile json client got back from server is: ', json);
                 console.log('state profile is: ', this.state.profile);
             })
             .catch(err => console.log(`error from Favorites fetch is `, err))
