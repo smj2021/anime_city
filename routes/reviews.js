@@ -6,6 +6,7 @@ const router = Router();
 
 router.use(decodeUserFromToken);
 router.post('/', checkAuth, reviewsCtrl.create);
+router.get('/:id', checkAuth, reviewsCtrl.show);
 
 export {
     router
