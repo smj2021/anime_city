@@ -20,7 +20,7 @@ class Favorites extends Component {
                 })
                 console.log('state profile is: ', this.state.profile);
             })
-            .catch(err => console.log(`error from Favorites fetch is `, err))
+            .catch(err => console.log(err))
     }
 
     render() {
