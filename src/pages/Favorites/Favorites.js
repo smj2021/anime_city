@@ -14,8 +14,11 @@ class Favorites extends Component {
         })
             .then(res => res.json())
             .then(json => {
-                // setState here
-                console.log('profile json client got back from server is: ');
+                this.setState({
+                    profile: json
+                })
+                console.log('profile json client got back from server is: ', json);
+                console.log('state profile is: ', this.state.profile);
             })
             .catch(err => console.log(`error from Favorites fetch is `, err))
     }

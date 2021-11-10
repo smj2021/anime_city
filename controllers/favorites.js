@@ -2,9 +2,10 @@ import { Favorite } from '../models/favorite.js'
 import { Profile } from '../models/profile.js'
 
 function index(req, res) {
-    Profile.findById(req.user.profile._id)
+    Profile.findById(req.user.profile)
         .populate('favorites')
         .then(profile => {
+            console.log('PROFILE IS ', profile);
             res.json(profile)
         })
 }
