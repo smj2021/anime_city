@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa'
 
 const StarRating = () => {
@@ -15,7 +15,7 @@ const StarRating = () => {
                     type="radio"
                     name="rating"
                     value={ratingValue}
-                    onClick={() => setRating(ratingValue)}
+                    onClick={(e) => saveRating(e, setRating)}
                 />
                 <FaStar className="star"
                     color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9'} size={50}
@@ -25,6 +25,15 @@ const StarRating = () => {
             </label>
         })}
     </div>
+}
+
+const saveRating = (e, setRating) => {
+    const rating = e.target.value
+    setRating(rating)
+    fetch('http://localhost:3000/api/reviews')
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
 }
 
 export default StarRating
