@@ -8,7 +8,7 @@ const StarRating = () => {
         {[...Array(5)].map((star, idx) => {
             const ratingValue = idx + 1
             return <label>
-                <input hidden type="radio" name="rating" value={ratingValue} onClick={() => setRating = { ratingValue }} />
+                <input hidden type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
                 <FaStar className="star" size={50} />
             </label>
         })}
