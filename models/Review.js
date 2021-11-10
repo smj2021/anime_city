@@ -6,4 +6,8 @@ const reviewsSchema = new Schema({
     content:{
         type: String,
     },
+    id:{
+        type: String,
+    },
+    
 })
