@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa'
 
 const StarRating = () => {
+    const [rating, setRating] = useState(null);
+
     return <div>
         {[...Array(5)].map((star, idx) => {
             const ratingValue = idx + 1
