@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const reviewsSchema = new Schema({
-    content:{
+    content: {
         type: String,
     },
-    id:{
+    id: {
         type: String,
     },
     addedBy: {
@@ -14,3 +14,9 @@ const reviewsSchema = new Schema({
         ref: 'Profile'
     }
 })
+
+const Review = mongoose.model('Review', reviewsSchema);
+
+export {
+    Review
+}
