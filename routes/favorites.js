@@ -4,7 +4,8 @@ import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
 
-router.post('/', favoritesCtrl.create)
+router.use(decodeUserFromToken)
+router.post('/', checkAuth, favoritesCtrl.create)
 
 
 

@@ -9,8 +9,11 @@ const router = Router()
 
 /*---------- Protected Routes ----------*/
 // IF YOU NEED ACCESS TO req.user, IT MUST GO BENEATH:
+
+//* adds user to req
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, usersCtrl.index)
+
 
 
 
