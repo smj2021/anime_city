@@ -1,4 +1,3 @@
-import { token } from 'morgan';
 import React, { Component } from 'react';
 
 class Favorites extends Component {
@@ -18,7 +17,6 @@ class Favorites extends Component {
                 this.setState({
                     profile: json
                 })
-                console.log('state profile is: ', this.state.profile);
             })
             .catch(err => console.log(err))
     }
@@ -26,7 +24,10 @@ class Favorites extends Component {
     render() {
         return (
             <div>
-                <h1>This is the Favorites Page</h1>
+                <h1>Favorites</h1>
+                {this.state.profile.favorites && this.state.profile.favorites.map((favorite, idx) => {
+                    return <p key={idx}>{favorite.id}</p>
+                })}
             </div>
         );
     }
