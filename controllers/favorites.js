@@ -11,12 +11,12 @@ function create(req, res) {
         .then(favorite => {
             // console.log('req.user.profile is: ', req.user.profile);
             Profile.findById(req.user.profile)
+                .populate('favorites')
                 .then(profile => {
                     profile.favorites.push(favorite)
                     profile.save(function(err) {
                         // console.log(err);
                     })
-                    .catch(err => console.log(err))
                     console.log('profile is: ', profile);
                 })
         })
