@@ -4,7 +4,10 @@ import { FaStar } from 'react-icons/fa'
 const StarRating = () => {
     return <div>
         {[...Array(5)].map((star) => {
-            return <FaStar size={50} />
+            return <label>
+                <input type="radio" name="rating" />
+                <FaStar size={50} />
+                </label>
         })}
     </div>
 }
