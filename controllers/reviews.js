@@ -16,6 +16,22 @@ function create(req, res) {
         })
 }
 
+function rating(req, res) {
+    console.log(req.body)
+    Review.create(req.body)
+        .then(review => {
+Profile.findById(req.user.profile)
+.then(profile => {
+    profile.reviews.push(review)
+    profile.save(function(err) {
+        
+    })
+})
+        })
+    res.json({ ok: 'success' })
+}
+
 export {
-    create
+    create,
+    rating
 }
