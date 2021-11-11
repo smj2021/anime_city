@@ -7,6 +7,7 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, favoritesCtrl.create)
 router.get('/', checkAuth, favoritesCtrl.index)
+router.delete('/', checkAuth, favoritesCtrl.delete)
 
 
 
