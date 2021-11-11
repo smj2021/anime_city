@@ -17,9 +17,7 @@ function create(req, res) {
             Profile.findById(req.user.profile)
                 .then(profile => {
                     profile.favorites.push(favorite)
-                    profile.save(function(err) {
-                        // console.log(err);
-                    })
+                    profile.save()
                     // console.log('profile is: ', profile);
                 })
         })
