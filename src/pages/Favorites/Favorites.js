@@ -23,25 +23,23 @@ class Favorites extends Component {
     }
 
     handleDeleteFavorite = id => {
-        // favoritesService.deleteOne(id)
-        // .then(this.setState({
-        //     profile:
-        // }))
+        favoritesService.deleteOne(id)
+        .then()
     }
 
     render() {
         return (
             <div>
                 <h1>Favorites</h1>
-                {/* render gets called before we fetch so we first need to check wen have the data before we map */}
+                {/* render gets called before we fetch so we first need to check we have the data before we map */}
                 {this.state.profile.favorites && this.state.profile.favorites.map((favorite, idx) => {
+                    console.log('favorite._id is: ', favorite._id);
                     return (
                         <div>
                             <h2 key={idx}>{favorite.title}</h2>
                             <img src={favorite.image} alt="" />
                             <button
-                                onClick={() =>  {/* handleDeleteFavorite(favorite._id)*/
-                                }}
+                                onClick={() =>  {this.handleDeleteFavorite(favorite._id)}}
                             >
                                 Remove
                             </button>
