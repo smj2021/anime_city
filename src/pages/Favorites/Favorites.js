@@ -24,7 +24,7 @@ class Favorites extends Component {
 
     handleDeleteFavorite = id => {
         favoritesService.deleteOne(id)
-        .then()
+        .then(favorite => console.log('favorite is ', favorite))
     }
 
     render() {
