@@ -20,18 +20,34 @@ function rating(req, res) {
     console.log(req.body)
     Review.create(req.body)
         .then(review => {
-Profile.findById(req.user.profile)
-.then(profile => {
-    profile.reviews.push(review)
-    profile.save(function(err) {
-        
-    })
-})
+            Profile.findById(req.user.profile)
+                .then(profile => {
+                    profile.reviews.push(review)
+                    profile.save(function (err) {
+
+                    })
+                })
         })
     res.json({ ok: 'success' })
 }
 
+function updateReview(req, res) {
+    Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((review) => {
+            res.json(review)
+        })
+}
+
+function deleteReview(req, res) {
+    Review.findByIdAndDelete(req.params.id)
+        .then(review => {
+            res.json(review)
+        })
+}
+
 export {
     create,
-    rating
+    rating,
+    updateReview,
+    deleteReview as delete
 }
