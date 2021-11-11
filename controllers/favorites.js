@@ -17,17 +17,14 @@ function create(req, res) {
             Profile.findById(req.user.profile)
                 .then(profile => {
                     profile.favorites.push(favorite)
-                    profile.save(function(err) {
-                        // console.log(err);
-                    })
-                    // console.log('profile is: ', profile);
+                    profile.save()
                 })
         })
 }
 
 function deleteFavorite(req, res) {
-    Favorite.findByIdAndDelete(req.user.profile.favorites[0]._id)
-        .then(favorite => console.log(`${favorite} has been removed from favorites`))
+    Favorite.findByIdAndDelete(req.params.id)
+        .then(favorite => res.json(favorite))
 }
 
 export {
