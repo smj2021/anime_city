@@ -1,6 +1,16 @@
 import { Review } from '../models/Review.js';
 import { Profile } from '../models/profile.js';
 
+function index(req, res) {
+    Review.find({})
+        .then(reviews => {
+            res.status(200).json(reviews)
+        })
+        .catch(err => {
+            res.json(err)
+        })
+}
+
 function create(req, res) {
     console.log('req.user is:', req.user)
     Review.create(req.body)
@@ -16,6 +26,7 @@ function create(req, res) {
         })
 }
 
+//creates a StarRating on the detail page and adds it to the profile in the database
 function rating(req, res) {
     console.log(req.body)
     Review.create(req.body)
@@ -38,7 +49,7 @@ function show(req, res) {
         })
 }
 
-function updateReview(req, res) {
+function update(req, res) {
     Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((review) => {
             res.json(review)
@@ -53,9 +64,10 @@ function deleteReview(req, res) {
 }
 
 export {
+    index,
     create,
     rating,
     show,
-    updateReview,
+    update,
     deleteReview as delete
 }
