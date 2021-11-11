@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa'
 
 
-const Review = () => {
-    const [review, addReview] = useState(null);
+class Review extends Component {
+    state = {
+        formData:{
+            content: ''
+        }
+    };
+    formRef = React.createRef();
 
-formRef = React.createRef();
-
-
-
-
+    handleSubmit = (e) => {
+        
+    }
 }
+
+
 
 
 
