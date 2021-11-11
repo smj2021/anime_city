@@ -8,3 +8,8 @@ const create = async newReviewData => {
     }).then(res => res.json());
 }
 
+const getAll() {
+    return fetch(BASE_URL)
+        .then(res => res.json());
+}
+
