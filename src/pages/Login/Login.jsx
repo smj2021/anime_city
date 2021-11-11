@@ -13,8 +13,8 @@ class LoginPage extends Component {
                 <div className="login__form">
                   <h3>Login</h3>
                   <form action="#">
-                    <div className="input__item">
                   <LoginForm history={this.props.history} handleSignupOrLogin={this.props.handleSignupOrLogin} />
+                    <div className="input__item">
                       <input type="text" placeholder="Email address" />
                       <span className="icon_mail"></span>
                     </div>
