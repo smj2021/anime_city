@@ -28,12 +28,12 @@ class LoginForm extends Component {
   render() {
     const { email, pw } = this.state
     return (
-      <form action="#"
+      <form
         autoComplete="off"
         onSubmit={this.handleSubmit}
         className={styles.container}
       >
-        <div className="input_item">
+        <div className={styles.inputContainer}>
           <label htmlFor="email" className={styles.label}>Email</label>
           <input
             type="text"
@@ -43,9 +43,8 @@ class LoginForm extends Component {
             name="email"
             onChange={this.handleChange}
           />
-          <span className="icon_mail"></span>
         </div>
-        <div className="input_item">
+        <div className={styles.inputContainer}>
           <label htmlFor="password" className={styles.label}>Password</label>
           <input
             type="password"
@@ -55,7 +54,6 @@ class LoginForm extends Component {
             name="pw"
             onChange={this.handleChange}
           />
-          <span className="icon_lock"></span>
         </div>
         <div>
           <button className={styles.button}>Log In</button>
