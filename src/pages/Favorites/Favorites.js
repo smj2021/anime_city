@@ -22,8 +22,11 @@ class Favorites extends Component {
             .catch(err => console.log(err))
     }
 
-    const handleDeleteFavorite = id = {
-
+    handleDeleteFavorite = id => {
+        // favoritesService.deleteOne(id)
+        // .then(this.setState({
+        //     profile:
+        // }))
     }
 
     render() {
