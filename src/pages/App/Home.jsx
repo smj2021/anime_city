@@ -1,38 +1,9 @@
 import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
-import Favorites from '../../pages/Favorites/Favorites'
 import { Route } from 'react-router-dom'
-import Landing from '../Landing/Landing'
 
 class Home extends Component {
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
-    }
-
-    handleSubmit = (e) => {
-        console.log('this.props is: ', this.props);
-        e.preventDefault();
-        this.setState({
-            searchURL: this.state.baseURL + this.state.query + this.state.animeTitle + this.state.limit
-        }, () => {
-            fetch(this.state.searchURL)
-                .then(res => res.json())
-                .then(json => this.setState({
-                    animes: json,
-                    animeTitle: ''
-                }))
-                .catch(err => console.log(err))
-        })
-        // our results are only displayed on '/' so we'll only see our results if we're on '/'. If we're searching while we are on '/anime', we need to redirect to '/' after submitting so we can see our results
-        if (this.props.history.location.pathname === '/') {
-            console.log('home');
-        } else {
-            this.props.history.push('/')
-        }
-    }
 
     render() {
         return (
