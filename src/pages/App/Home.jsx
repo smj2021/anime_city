@@ -2,13 +2,8 @@ import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
 import Favorites from '../../pages/Favorites/Favorites'
-import { Route, Redirect } from 'react-router-dom'
-import NavBar from '../../components/NavBar/NavBar'
-import Signup from '../Signup/Signup'
-import Login from '../Login/Login'
+import { Route } from 'react-router-dom'
 import Landing from '../Landing/Landing'
-import * as authService from '../../services/authService'
-import Users from '../Users/Users'
 
 class Home extends Component {
     handleChange = (e) => {
@@ -40,22 +35,17 @@ class Home extends Component {
     }
 
     render() {
-        const { user } = this.state
         return (
             <>
                 <body>
                     <div id="preloder">
                         <div className="loader"></div>
                     </div>
-                    <NavBar user={user} handleLogout={this.handleLogout} />
-
                     <header className="header">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-2">
                                     <div className="header__logo">
-                                        <li><Route exact path='/'><Landing user={user} animes={this.state.animes} /></Route></li>
-                                        {this.state.AnimeResults}
                                     </div>
                                 </div>
                                 <div className="col-lg-8">
@@ -71,9 +61,9 @@ class Home extends Component {
                                                         <li><a href="./blog-details.html">Blog Details</a></li>
                                                         <li><a href="./signup.html">Sign Up</a></li>
                                                         <li><a href="./login.html">Login</a></li>
-                                                        <Route exact path='/anime-results'render={() => <AnimeResults animes={this.state.animes}/>}/>
+                                                        <li><Route exact path='/anime-results'render={() => <AnimeResults animes={this.state.animes}/>}/></li>
 
-                                                        <Route exact path='/anime' render={({ location }) => <AnimeDetails location={location}/>}/>
+                                                        <li><Route exact path='/anime' render={({ location }) => <AnimeDetails location={location}/>}/></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="./blog.html">Our Blog</a></li>
@@ -168,198 +158,6 @@ class Home extends Component {
                                                         </ul>
                                                         <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/trending/trend-2.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/trending/trend-3.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Shingeki no Kyojin Season 3 Part 2</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/trending/trend-4.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Fullmetal Alchemist: Brotherhood</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/trending/trend-5.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Shiratorizawa Gakuen Koukou</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/trending/trend-6.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Code Geass: Hangyaku no Lelouch R2</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="popular__product">
-                                        <div className="row">
-                                            <div className="col-lg-8 col-md-8 col-sm-8">
-                                                <div className="section-title">
-                                                    <h4>Popular Shows</h4>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-4 col-sm-4">
-                                                <div className="btn__all">
-                                                    <a href="#" className="primary-btn">View All <span className="arrow_right"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-1.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-2.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-3.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-4.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Rurouni Kenshin: Meiji Kenkaku Romantan</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-5.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Mushishi Zoku Shou 2nd Season</a></h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 col-sm-6">
-                                                <div className="product__item">
-                                                    <div className="product__item__pic set-bg" data-setbg="img/popular/popular-6.jpg">
-                                                        <div className="ep">18 / 18</div>
-                                                        <div className="comment"><i className="fa fa-comments"></i> 11</div>
-                                                        <div className="view"><i className="fa fa-eye"></i> 9141</div>
-                                                    </div>
-                                                    <div className="product__item__text">
-                                                        <ul>
-                                                            <li>Active</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                                                    </div>
                                                 </div>                                    
                                             </div>
                                         </div>
@@ -383,11 +181,10 @@ class Home extends Component {
                                 <div className="col-lg-6">
                                     <div className="footer__nav">
                                         <ul>
-                                            <li><Route exact path='/'><Landing user={user} animes={this.state.animes} /></Route></li>                                            
+                                            <li><a href="./index.html">Home</a></li>
+                                            <li><a href="./anime-details.html">Details</a></li>
+                                            <li><a href="./anime-watching.html">Watching</a></li>
                                             <li><a href="./categories.html">Categories</a></li>
-                                            <li><Route exact path='/anime' render={({ location }) => <AnimeDetails location={location} />} />Anime Details</li>
-                                            <li><Route exact path='/anime-results' render={() => <AnimeResults animes={this.state.animes} />} />Anime Results</li>
-                                            <li><Route exact path='/favorites' render={() => <Favorites />} />Favorites</li>
                                         </ul>
                                     </div>
                                 </div>

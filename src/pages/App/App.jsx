@@ -72,7 +72,7 @@ class App extends Component {
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
 
-				{/* <form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit}>
 					<label htmlFor="animeTitle">Title</label>
 					<input
 						id="animeTitle"
@@ -81,7 +81,7 @@ class App extends Component {
 						onChange={this.handleChange}
 					/>
 					<input type="submit" value="Search" />
-				</form> */}
+				</form>
 
 				<Home />
 
