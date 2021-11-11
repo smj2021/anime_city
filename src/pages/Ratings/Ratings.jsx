@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { FaStar } from 'react-icons/fa'
+
 
 const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
-
 
     return <div>
         {[...Array(5)].map((star, idx) => {
@@ -18,7 +18,7 @@ const StarRating = () => {
                     onClick={(e) => saveRating(e, setRating)}
                 />
                 <FaStar className="star"
-                    color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9'} size={50}
+                    color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9'} size={40}
                     onMouseEnter={() => setHover(ratingValue)}
                     onMouseLeave={() => setHover(null)}
                 />
@@ -36,7 +36,7 @@ const saveRating = (e, setRating) => {
             'Content-Type': 'application/json',
             'Authorization': localStorage.getItem('token')
         },
-        body: JSON.stringify({ rating: 5 })
+        body: JSON.stringify({ rating: e.target.value })
 
     })
         .then(res => res.json())
@@ -44,4 +44,4 @@ const saveRating = (e, setRating) => {
         .catch(err => console.error(err))
 }
 
-export default StarRating
+export default StarRating;

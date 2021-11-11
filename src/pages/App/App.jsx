@@ -70,7 +70,6 @@ class App extends Component {
 		const { user } = this.state
 		return (
 			<>
-				<Home />
 				<NavBar user={user} handleLogout={this.handleLogout} />
 
 				<form onSubmit={this.handleSubmit}>
@@ -113,10 +112,10 @@ class App extends Component {
 				<Route
 					exact path='/anime'
 					render={({ location }) =>
-						<AnimeDetails
-							location={location}
-						/>
-					}
+					<AnimeDetails
+					location={location}
+					/>
+				}
 				/>
 
 				<Route
@@ -125,6 +124,7 @@ class App extends Component {
 						<Favorites />
 					}
 				/>
+				<Home />
 			</>
 		)
 	}
