@@ -10,7 +10,8 @@ class AnimeDetails extends Component {
 
     addToFavorites = (e) => {
         e.preventDefault()
-        const data = { id: e.target.firstChild.value };
+        const data = { id: e.target.firstChild.value, title: e.target.firstChild.nextSibling.value};
+        console.log('DATA IS: ', data);
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
         fetch('http://localhost:3001/api/favorites', {
             method: 'POST',
@@ -22,7 +23,7 @@ class AnimeDetails extends Component {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(json => console.log(json));
+            .then(json => console.log('json is: ', json));
     }
 
     render() {
@@ -47,6 +48,7 @@ class AnimeDetails extends Component {
                 <br /><br />
                 <form onSubmit={this.addToFavorites}>
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
+                    <input type="hidden" name="title" value={animeDetails.title} />
                     <button type="submit">Add to Favorites</button>
                 </form>
                 <Link to="/">Return</Link>
