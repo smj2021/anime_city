@@ -31,9 +31,6 @@ class Favorites extends Component {
                         <div>
                             <h2 key={idx}>{favorite.title}</h2>
                             <img src={favorite.image} alt="" />
-                            {/* <form action={`/favorites/?_method=DELETE`} method="post">
-                                <button type="submit">Remove</button>
-                            </form> */}
                             <button
                                 onClick={() =>  {/* handleDeleteFavorite*/
                                 }}
