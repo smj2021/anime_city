@@ -28,6 +28,12 @@ class Review extends Component {
         const { content } = this.state.formData;
         return (
             <>
+            <div>Add Review
+                <form action="">
+
+                    
+                </form>
+            </div>
             </>
         )
     }
