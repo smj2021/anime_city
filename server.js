@@ -13,7 +13,7 @@ import('./config/database.js')
 const app = express()
 
 
-app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)), 'build')))
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
@@ -21,7 +21,7 @@ app.use(express.json())
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/favorites', favoritesRouter)
-app.use('/api/rating', reviewsRouter)
+app.use('/api/reviews', reviewsRouter)
 
 
 app.get("/*", function (req, res) {
@@ -33,5 +33,5 @@ app.get("/*", function (req, res) {
 const port = process.env.PORT || 3001
 
 app.listen(port, () => {
-  console.log(`Express is listening on port ${port}.`)
+	console.log(`Express is listening on port ${port}.`)
 })
