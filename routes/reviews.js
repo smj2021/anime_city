@@ -6,11 +6,12 @@ const router = Router();
 
 router.use(decodeUserFromToken);
 router.get('/reviews', checkAuth, reviewsCtrl.index)
-router.get('reviews/:animeId', checkAuth, reviewsCtrl.show);
-router.post('reviews/:animeId', checkAuth, reviewsCtrl.rating)
-router.post('/reviews', checkAuth, reviewsCtrl.create);
-router.put('/reviews/:animeId', checkAuth, reviewsCtrl.update)
-router.delete('/reviews/:animeId', checkAuth, reviewsCtrl.delete)
+//creates a rating
+router.post('/:animeid', checkAuth, reviewsCtrl.rating)
+router.post('/', checkAuth, reviewsCtrl.create);
+router.get('/:animeId', checkAuth, reviewsCtrl.show);
+router.put('/:animeId', checkAuth, reviewsCtrl.update)
+router.delete('/:animeId', checkAuth, reviewsCtrl.delete)
 
 export {
     router

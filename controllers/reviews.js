@@ -26,6 +26,7 @@ function create(req, res) {
         })
 }
 
+//creates a StarRating on the detail page and adds it to the profile in the database
 function rating(req, res) {
     console.log(req.body)
     Review.create(req.body)
