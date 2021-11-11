@@ -83,8 +83,6 @@ class App extends Component {
 					<input type="submit" value="Search" />
 				</form>
 
-				<Home />
-
 				<Route exact path='/'>
 					<Landing user={user} animes={this.state.animes} />
 				</Route>
@@ -114,10 +112,10 @@ class App extends Component {
 				<Route
 					exact path='/anime'
 					render={({ location }) =>
-						<AnimeDetails
-							location={location}
-						/>
-					}
+					<AnimeDetails
+					location={location}
+					/>
+				}
 				/>
 
 				<Route
@@ -126,6 +124,7 @@ class App extends Component {
 						<Favorites />
 					}
 				/>
+				<Home />
 			</>
 		)
 	}
