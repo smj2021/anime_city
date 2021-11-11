@@ -11,8 +11,12 @@ class Review extends Component {
     formRef = React.createRef();
 
     handleSubmit = (e) => {
-        
-    }
+        e.preventDefault();
+        this.props.handleAddReview(this.state.formData)
+    };
+
+
+    
 }
 
 
