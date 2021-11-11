@@ -9,7 +9,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import Users from '../Users/Users'
-import Home from './Home'
+
 
 class App extends Component {
 	constructor() {
@@ -124,7 +124,6 @@ class App extends Component {
 						<Favorites />
 					}
 				/>
-				<Home />
 			</>
 		)
 	}
