@@ -25,7 +25,13 @@ function create(req, res) {
         })
 }
 
+function deleteFavorite(req, res) {
+    Favorite.findByIdAndDelete(req.user.profile.favorites[0]._id)
+        .then(favorite => console.log(`${favorite} has been removed from favorites`))
+}
+
 export {
     index,
-    create
+    create,
+    deleteFavorite as delete
 }
