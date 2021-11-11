@@ -27,7 +27,12 @@ class Favorites extends Component {
                 <h1>Favorites</h1>
                 {/* render gets called before we fetch so we first need to check wen have the data before we map */}
                 {this.state.profile.favorites && this.state.profile.favorites.map((favorite, idx) => {
-                    return <p key={idx}>{favorite.title}</p>
+                    return (
+                        <div>
+                            <h2 key={idx}>{favorite.title}</h2>
+                            <img src={favorite.image} alt="" />
+                        </div>
+                    )
                 })}
             </div>
         );
