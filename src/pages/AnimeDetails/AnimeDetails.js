@@ -47,6 +47,7 @@ class AnimeDetails extends Component {
                 <br /><br />
                 <form onSubmit={this.addToFavorites}>
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
+                    <input type="hidden" name="title" value={animeDetails.title} />
                     <button type="submit">Add to Favorites</button>
                 </form>
                 <Link to="/">Return</Link>
