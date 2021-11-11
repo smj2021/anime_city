@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa'
 
+
+const Review = () => {
+    const [review, addReview] = useState(null);
+
+formRef = React.createRef();
+
+
+
+
+}
+
+
+
 const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
