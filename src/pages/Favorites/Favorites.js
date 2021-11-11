@@ -32,7 +32,7 @@ class Favorites extends Component {
                             <h2 key={idx}>{favorite.title}</h2>
                             <img src={favorite.image} alt="" />
                             <button
-                                onClick={() =>  {/* handleDeleteFavorite*/
+                                onClick={() =>  {/* handleDeleteFavorite(favorite._id)*/
                                 }}
                             >
                                 Remove
