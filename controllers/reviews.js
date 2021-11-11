@@ -48,7 +48,7 @@ function show(req, res) {
         })
 }
 
-function updateReview(req, res) {
+function update(req, res) {
     Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((review) => {
             res.json(review)
@@ -67,6 +67,6 @@ export {
     create,
     rating,
     show,
-    updateReview,
+    update,
     deleteReview as delete
 }

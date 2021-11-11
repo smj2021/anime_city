@@ -5,10 +5,12 @@ import { decodeUserFromToken, checkAuth } from '../middleware/auth.js';
 const router = Router();
 
 router.use(decodeUserFromToken);
-router.get('/', checkAuth, reviewsCtrl.index)
+router.get('/reviews', checkAuth, reviewsCtrl.index)
+router.get('reviews/:animeId', checkAuth, reviewsCtrl.show);
 router.post('reviews/:animeId', checkAuth, reviewsCtrl.rating)
 router.post('/reviews', checkAuth, reviewsCtrl.create);
-// router.get('/:id', checkAuth, reviewsCtrl.show);
+router.put('/reviews/:animeId', checkAuth, reviewsCtrl.update)
+router.delete('/reviews/:animeId', checkAuth, reviewsCtrl.delete)
 
 export {
     router
