@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import StarRating from '../../components/Reviews/Reviews'
+import StarRating from '../../pages/Ratings/Ratings'
 
 class AnimeDetails extends Component {
     state = {
