@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as favoritesService from '../../services/favorites'
 
 class Favorites extends Component {
     state = {
@@ -22,7 +23,7 @@ class Favorites extends Component {
     }
 
     const handleDeleteFavorite = id = {
-        
+
     }
 
     render() {
