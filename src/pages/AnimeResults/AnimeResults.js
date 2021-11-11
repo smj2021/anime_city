@@ -5,6 +5,7 @@ class AnimeResults extends Component {
     render() {
         return (
             <>
+                {console.log('this.props.animes in Anime results is: ', this.props.animes)}
                 {this.props.animes.map((anime, idx) => (
                     <div className='anime' key={idx} >
                         <Link 
