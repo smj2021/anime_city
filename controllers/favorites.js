@@ -5,7 +5,7 @@ function index(req, res) {
     Profile.findById(req.user.profile)
         .populate('favorites')
         .then(profile => {
-            // console.log('PROFILE IS ', profile);
+            console.log('PROFILE IS ', profile);
             res.json(profile)
         })
 }
@@ -20,7 +20,7 @@ function create(req, res) {
                     profile.save(function(err) {
                         // console.log(err);
                     })
-                    console.log('profile is: ', profile);
+                    // console.log('profile is: ', profile);
                 })
         })
 }
