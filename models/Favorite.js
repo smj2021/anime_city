@@ -9,6 +9,9 @@ const favoriteSchema = new Schema ({
     addedBy: {
         type: Schema.Types.ObjectId,
         ref: 'Profile'
+    },
+    title: {
+        type: String
     }
 })
 
