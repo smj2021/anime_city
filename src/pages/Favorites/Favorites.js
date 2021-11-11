@@ -21,6 +21,10 @@ class Favorites extends Component {
             .catch(err => console.log(err))
     }
 
+    const handleDeleteFavorite = id = {
+        
+    }
+
     render() {
         return (
             <div>
