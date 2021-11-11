@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../pages/Ratings/Ratings'
 
+import Reviews from '../../pages/Reviews/Reviews'
+
+
+
 class AnimeDetails extends Component {
     state = {
         // passed from <Link to={{pathname: `/anime`, state: { anime }}}>
@@ -10,7 +14,7 @@ class AnimeDetails extends Component {
 
     addToFavorites = (e) => {
         e.preventDefault()
-        const data = { id: e.target.firstChild.value, title: e.target.firstChild.nextSibling.value};
+        const data = { id: e.target.firstChild.value, title: e.target.firstChild.nextSibling.value };
         console.log('DATA IS: ', data);
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
         fetch('http://localhost:3001/api/favorites', {
@@ -34,6 +38,7 @@ class AnimeDetails extends Component {
                 <h1>{animeDetails.title}</h1>
                 <img src={animeDetails.image_url} alt="" />
                 <StarRating />
+                <Reviews />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
                 <p><b>Type:</b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
