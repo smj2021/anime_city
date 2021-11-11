@@ -4,7 +4,6 @@ function deleteOne(id) {
     return fetch(`${BASE_URL}/${id}`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': localStorage.getItem('token')
         }
     })
