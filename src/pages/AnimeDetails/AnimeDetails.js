@@ -14,7 +14,14 @@ class AnimeDetails extends Component {
 
     addToFavorites = (e) => {
         e.preventDefault()
-        const data = { id: e.target.firstChild.value, title: e.target.firstChild.nextSibling.value };
+
+        const data = { 
+            id: e.target.firstChild.value, 
+            title: e.target.firstChild.nextSibling.value, 
+            image: e.target.firstChild.nextSibling.nextSibling.value
+        };
+
+
         console.log('DATA IS: ', data);
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
         fetch('http://localhost:3001/api/favorites', {
@@ -54,6 +61,7 @@ class AnimeDetails extends Component {
                 <form onSubmit={this.addToFavorites}>
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
                     <input type="hidden" name="title" value={animeDetails.title} />
+                    <input type="hidden" name="image" value={animeDetails.image_url} />
                     <button type="submit">Add to Favorites</button>
                 </form>
                 <Link to="/">Return</Link>
