@@ -1,8 +1,14 @@
 import { Review } from '../models/Review.js';
 import { Profile } from '../models/profile.js';
 
-function index(req, res){
-    
+function index(req, res) {
+    Review.find({})
+        .then(reviews => {
+            res.status(200).json(reviews)
+        })
+        .catch(err => {
+            res.json(err)
+        })
 }
 
 function create(req, res) {
@@ -57,6 +63,7 @@ function deleteReview(req, res) {
 }
 
 export {
+    index,
     create,
     rating,
     show,
