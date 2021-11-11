@@ -27,13 +27,23 @@ class Review extends Component {
     render() {
         const { content } = this.state.formData;
         return (
-            <>
-            <div>Add Review
-                <form action="">
-
-                    
+            <>Add Review
+                <form ref={this.formRef} autocomplete='off'
+                    onSubmit={this.handleSubmit}>
+                    <label htmlFor="reviewInput" className="form-label"></label>
+                    <textarea
+                        type="text"
+                        className=""
+                        id="contentInput"
+                        name="content"
+                        value={content}
+                        onChange={this.handleChange} cols="30" rows="5" />
+                    <div>
+                        <button type="submit"
+                            className=""
+                            disabled={this.state.invalidForm}>Add a Review</button>
+                    </div>
                 </form>
-            </div>
             </>
         )
     }

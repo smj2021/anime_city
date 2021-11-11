@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../pages/Ratings/Ratings'
+import Reviews from '../../pages/Reviews/Reviews'
 
 class AnimeDetails extends Component {
     state = {
@@ -34,6 +35,7 @@ class AnimeDetails extends Component {
                 <h1>{animeDetails.title}</h1>
                 <img src={animeDetails.image_url} alt="" />
                 <StarRating />
+                <Reviews />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
                 <p><b>Type:</b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
