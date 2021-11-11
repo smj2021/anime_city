@@ -4,7 +4,8 @@ import { FaStar } from 'react-icons/fa'
 
 class Review extends Component {
     state = {
-        formData:{
+        invalidForm: true,
+        formData: {
             content: ''
         }
     };
@@ -15,8 +16,14 @@ class Review extends Component {
         this.props.handleAddReview(this.state.formData)
     };
 
+    handleChange = (e) => {
+        const formData = { ... this.state.formData, [e.target.name]: e.target.value };
+        this.setState({
+            formData,
+            invalidForm: !this.formRef.current.checkValidity
+        })
+    }
 
-    
 }
 
 
