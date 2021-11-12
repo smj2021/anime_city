@@ -22,7 +22,6 @@ class AnimeDetails extends Component {
             image: e.target.firstChild.nextSibling.nextSibling.value
         };
 
-
         console.log('DATA IS: ', data);
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
         fetch('http://localhost:3001/api/favorites', {
