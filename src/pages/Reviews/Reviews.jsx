@@ -11,6 +11,12 @@ class Review extends Component {
     };
     formRef = React.createRef();
 
+    componentDidMount() {
+        fetch('http://localhost:3001/api/reviews')
+    }
+
+
+
     handleSubmit = (e) => {
         console.log(this.props)
         e.preventDefault();
@@ -65,6 +71,7 @@ class Review extends Component {
                             </Button>
                         </div>
                     </form>
+                    <h1>Reviews will go here</h1>
                 </div>
             </>
         )
