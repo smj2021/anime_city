@@ -7,9 +7,20 @@ class Review extends Component {
         invalidForm: true,
         formData: {
             content: ''
-        }
+        },
+        reviews: []
     };
     formRef = React.createRef();
+
+    componentDidMount() {
+        fetch('http://localhost:3001/api/reviews')
+            .then(res => res.json())
+            .then(json => this.setState({
+                reviews: json
+            }))    
+    }
+
+
 
     handleSubmit = (e) => {
         console.log(this.props)
@@ -43,6 +54,7 @@ class Review extends Component {
 
 
     render() {
+        console.log('reviews are:', this.state.reviews)
         const { content } = this.state.formData;
         return (
             <>Add Review
@@ -65,6 +77,10 @@ class Review extends Component {
                             </Button>
                         </div>
                     </form>
+                    <h2>Reviews will go here</h2>
+                    {this.state.reviews.filter((review, idx) => {
+                        return this.props.animeDetails.mal_id === review.id
+                    })}
                 </div>
             </>
         )
