@@ -7,8 +7,8 @@ const router = Router();
 router.use(decodeUserFromToken);
 router.get('/', checkAuth, reviewsCtrl.index)
 //creates a rating
-router.post('/:animeid', checkAuth, reviewsCtrl.rating)
-router.post('/', checkAuth, reviewsCtrl.create);
+// router.post('/:animeId', checkAuth, reviewsCtrl.rating)
+router.post('/:animeId', checkAuth, reviewsCtrl.create);
 router.get('/:animeId', checkAuth, reviewsCtrl.show);
 router.put('/:animeId', checkAuth, reviewsCtrl.update)
 router.delete('/:animeId', checkAuth, reviewsCtrl.delete)

@@ -13,7 +13,18 @@ class Review extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.handleAddReview(this.state.formData)
+        console.log(e.target.querySelector('textarea').value)
+        fetch("http://localhost:3001/api/reviews/animeId", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify({ content: e.target.querySelector('textarea').value })
+        })
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     };
 
     handleChange = (e) => {
@@ -24,28 +35,32 @@ class Review extends Component {
         })
     }
 
+
+
     render() {
         const { content } = this.state.formData;
         return (
             <>Add Review
-                <form ref={this.formRef} autocomplete='off'
-                    onSubmit={this.handleSubmit}>
-                    <label htmlFor="reviewInput" 
-                    className="form-label"></label>
-                    <textarea
-                        type="text"
-                        className=""
-                        id="contentInput"
-                        name="content"
-                        value={content}
-                        onChange={this.handleChange} cols="30" rows="5" />
-                    <div>
-                        <Button type="submit"
+                <div>
+                    <form ref={this.formRef} autocomplete='off'
+                        onSubmit={this.handleSubmit}>
+                        <label htmlFor="reviewInput"
+                            className="form-label"></label>
+                        <textarea
+                            type="text"
                             className=""
-                            disabled={this.state.invalidForm}>Add a Review
-                        </Button>
-                    </div>
-                </form>
+                            id="contentInput"
+                            name="content"
+                            value={content}
+                            onChange={this.handleChange} cols="30" rows="5" />
+                        <div>
+                            <Button type="submit"
+                                className=""
+                                disabled={this.state.invalidForm}>Add a Review
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </>
         )
     }
