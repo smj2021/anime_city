@@ -5,7 +5,7 @@ import { decodeUserFromToken, checkAuth } from '../middleware/auth.js';
 const router = Router();
 
 router.use(decodeUserFromToken);
-router.get('/reviews', checkAuth, reviewsCtrl.index)
+router.get('/', checkAuth, reviewsCtrl.index)
 //creates a rating
 router.post('/:animeid', checkAuth, reviewsCtrl.rating)
 router.post('/', checkAuth, reviewsCtrl.create);
