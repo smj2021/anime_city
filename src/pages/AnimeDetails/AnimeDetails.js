@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../pages/Ratings/Ratings'
-
 import Reviews from '../../pages/Reviews/Reviews'
-
-
 
 class AnimeDetails extends Component {
     state = {
@@ -20,7 +17,6 @@ class AnimeDetails extends Component {
             title: e.target.firstChild.nextSibling.value, 
             image: e.target.firstChild.nextSibling.nextSibling.value
         };
-
 
         console.log('DATA IS: ', data);
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
