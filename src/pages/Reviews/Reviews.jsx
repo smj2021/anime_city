@@ -7,14 +7,17 @@ class Review extends Component {
         invalidForm: true,
         formData: {
             content: ''
-        }
+        },
+        reviews: []
     };
     formRef = React.createRef();
 
     componentDidMount() {
         fetch('http://localhost:3001/api/reviews')
             .then(res => res.json())
-            .then(json => console.log('REVIEWS JSON IS: ', json))
+            .then(json => this.setState({
+                reviews: json
+            }))    
     }
 
 
@@ -51,6 +54,7 @@ class Review extends Component {
 
 
     render() {
+        console.log('reviews are:', this.state.reviews)
         const { content } = this.state.formData;
         return (
             <>Add Review
