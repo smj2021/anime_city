@@ -61,7 +61,6 @@ export {
     index,
     create,
     rating,
-    show,
     update,
     deleteReview as delete
 }

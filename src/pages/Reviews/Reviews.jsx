@@ -13,6 +13,8 @@ class Review extends Component {
 
     componentDidMount() {
         fetch('http://localhost:3001/api/reviews')
+            .then(res => res.json())
+            .then(json => console.log('REVIEWS JSON IS: ', json))
     }
 
 
