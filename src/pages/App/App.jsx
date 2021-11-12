@@ -9,7 +9,9 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import Users from '../Users/Users'
-
+import { Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 class App extends Component {
 	constructor() {
 		super()
@@ -66,17 +68,19 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
-
-				<form onSubmit={this.handleSubmit}>
-					<label htmlFor="animeTitle">Title</label>
-					<input
-						id="animeTitle"
-						type="text"
-						value={this.state.animeTitle}
-						onChange={this.handleChange}
-					/>
-					<input type="submit" value="Search" />
-				</form>
+				<Form.Group>
+					<Form onSubmit={this.handleSubmit}>
+						<Form.Label htmlFor="animeTitle">Title</Form.Label>
+						<br />
+						<input
+							id="animeTitle"
+							type="text"
+							value={this.state.animeTitle}
+							onChange={this.handleChange}
+						/>
+						<Button type="submit">Search</Button>
+					</Form>
+				</Form.Group>
 
 				<Route exact path='/'>
 					<Landing user={user} animes={this.state.animes} />

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import StarRating from '../../pages/Ratings/Ratings'
-import Reviews from '../../pages/Reviews/Reviews'
+import StarRating from '../../pages/Ratings/Ratings';
+import Reviews from '../../pages/Reviews/Reviews';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 class AnimeDetails extends Component {
     state = {
@@ -43,7 +47,7 @@ class AnimeDetails extends Component {
                 <StarRating />
                 <Reviews />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
-                <p><b>Type:</b>{animeDetails.type}</p>
+                <p><b>Type: </b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
                     ? <p><b>Episodes: </b>{animeDetails.episodes}</p>
                     : ''}
@@ -58,7 +62,7 @@ class AnimeDetails extends Component {
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
                     <input type="hidden" name="title" value={animeDetails.title} />
                     <input type="hidden" name="image" value={animeDetails.image_url} />
-                    <button type="submit">Add to Favorites</button>
+                    <Button type="submit">Add to Favorites</Button>
                 </form>
                 <Link to="/">Return</Link>
             </div>
