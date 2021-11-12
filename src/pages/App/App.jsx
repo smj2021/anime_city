@@ -24,10 +24,6 @@ class App extends Component {
 		}
 	}
 
-	// state = {
-	// 	user: authService.getUser()
-	// }
-
 	handleLogout = () => {
 		authService.logout()
 		this.setState({ user: null })
