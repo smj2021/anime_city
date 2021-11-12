@@ -44,7 +44,6 @@ class AnimeDetails extends Component {
                 <h1>{animeDetails.title}</h1>
                 <img src={animeDetails.image_url} alt="" />
                 <StarRating />
-                <Reviews animeDetails={animeDetails} />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
                 <p><b>Type: </b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
@@ -63,6 +62,7 @@ class AnimeDetails extends Component {
                     <input type="hidden" name="image" value={animeDetails.image_url} />
                     <Button type="submit">Add to Favorites</Button>
                 </form>
+                <Reviews animeDetails={animeDetails} />
                 <Link to="/">Return</Link>
             </div>
         )
