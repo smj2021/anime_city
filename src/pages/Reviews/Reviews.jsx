@@ -17,7 +17,7 @@ class Review extends Component {
             .then(res => res.json())
             .then(json => this.setState({
                 reviews: json
-            }))    
+            }))
     }
 
 
@@ -77,9 +77,10 @@ class Review extends Component {
                             </Button>
                         </div>
                     </form>
-                    <h2>Reviews will go here</h2>
-                    {this.state.reviews.filter((review, idx) => {
-                        return this.props.animeDetails.mal_id === review.id
+                    <h3>Reviews:</h3>
+                    {this.state.reviews.map((review, idx) => {
+                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}</p>
+                        // console.log(this.props.animeDetails.mal_id, review.id)
                     })}
                 </div>
             </>
