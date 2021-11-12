@@ -15,12 +15,13 @@ function create(req, res) {
     console.log('req.user is:', req.body)
     Review.create(req.body)
         .then(review => {
-            console.log('req.user.profile is: ', req.user.profile)
+            console.log('req.user.profile is: ', review)
             Profile.findById(req.user.profile)
                 .then(profile => {
                     profile.reviews.push(review)
-                    profile.save(function (err) {
+                    profile.save(function (err, obj) {
                         console.log(err)
+                        res.json(review)
                     })
                 })
         })
