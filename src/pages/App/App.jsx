@@ -69,6 +69,7 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
+				
 				<Form.Group>
 					<Form onSubmit={this.handleSubmit}>
 						<br />

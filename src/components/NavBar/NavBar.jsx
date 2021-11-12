@@ -19,18 +19,27 @@ const NavBar = ({ user, handleLogout }) => {
 					</Container>
 				</Navbar>
 			) : (
-				<Navbar>
-					<div>
-						<ul>
-							<li>
-								<Link to="/login">Log In</Link>
-							</li>
-							<li>
-								<Link to="/signup">Sign Up</Link>
-							</li>
-						</ul>
-					</div>
+				<Navbar bg="dark" variant="dark">
+					<Container>
+						<Navbar.Brand href="/">Anime City</Navbar.Brand>
+						<Nav className="me-auto">
+							<Nav.Link href="/login">Log In</Nav.Link>
+							<Nav.Link href="/signup">Sign Up</Nav.Link>
+						</Nav>
+					</Container>
 				</Navbar>
+
+
+					// <div>
+					// 	<ul>
+					// 		<li>
+					// 			<Link to="/login">Log In</Link>
+					// 		</li>
+					// 		<li>
+					// 			<Link to="/signup">Sign Up</Link>
+					// 		</li>
+					// 	</ul>
+					// </div>
 			)}
 		</>
 	)
