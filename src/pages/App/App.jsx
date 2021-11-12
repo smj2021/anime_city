@@ -9,8 +9,6 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import Users from '../Users/Users'
-
-
 class App extends Component {
 	constructor() {
 		super()
@@ -77,6 +75,7 @@ class App extends Component {
 						onChange={this.handleChange}
 					/>
 					<input type="submit" value="Search" />
+					
 				</form>
 
 				<Route exact path='/'>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import StarRating from '../../pages/Ratings/Ratings'
-
-import Reviews from '../../pages/Reviews/Reviews'
+import StarRating from '../../pages/Ratings/Ratings';
+import Reviews from '../../pages/Reviews/Reviews';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -62,7 +63,7 @@ class AnimeDetails extends Component {
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
                     <input type="hidden" name="title" value={animeDetails.title} />
                     <input type="hidden" name="image" value={animeDetails.image_url} />
-                    <button type="submit">Add to Favorites</button>
+                    <Button type="submit">Add to Favorites</Button>
                 </form>
                 <Link to="/">Return</Link>
             </div>
