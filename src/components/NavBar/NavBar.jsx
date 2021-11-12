@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
 		<>
 			{user ? (
-				<nav>
+				<Navbar>
 					<div>
 						<ul>
 							<li>Welcome, {user.name}</li>
@@ -21,9 +23,9 @@ const NavBar = ({ user, handleLogout }) => {
 							<li><Link to='' onClick={handleLogout}>Log Out</Link></li>
 						</ul>
 					</div>
-				</nav>
+				</Navbar>
 			) : (
-				<nav>
+				<Navbar>
 					<div>
 						<ul>
 							<li>
@@ -34,7 +36,7 @@ const NavBar = ({ user, handleLogout }) => {
 							</li>
 						</ul>
 					</div>
-				</nav>
+				</Navbar>
 			)}
 		</>
 	)
