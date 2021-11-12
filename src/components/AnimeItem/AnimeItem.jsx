@@ -11,7 +11,7 @@ function AnimeItem(props) {
                     state: {anime}
                 }}
             >
-                <h2>{props.anime.title}</h2>
+                <h3>{props.anime.title}</h3>
                 <img src={props.anime.image_url} alt="" />
             </Link>
         </div>

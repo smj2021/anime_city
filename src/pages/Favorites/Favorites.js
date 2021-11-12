@@ -41,7 +41,7 @@ class Favorites extends Component {
                 {
                 this.state.profile.favorites && this.state.profile.favorites.map((favorite, idx) => (
                     <div key={idx}>
-                        <h2>{favorite.title}</h2>
+                        <h3>{favorite.title}</h3>
                         <img src={favorite.image} alt="" />
                         <br />
                         <Button onClick={() => {this.handleDeleteFavorite(favorite._id)}}>
