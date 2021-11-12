@@ -44,7 +44,7 @@ class AnimeDetails extends Component {
                 <h1>{animeDetails.title}</h1>
                 <img src={animeDetails.image_url} alt="" />
                 <StarRating />
-                <Reviews />
+                <Reviews animeDetails={animeDetails} />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
                 <p><b>Type: </b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"

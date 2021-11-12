@@ -9,6 +9,9 @@ const reviewsSchema = new Schema({
     id: {
         type: String,
     },
+    name: {
+        type: String,
+    },
     rating: {
         type: Number,
     },
