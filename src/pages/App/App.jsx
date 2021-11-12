@@ -70,13 +70,13 @@ class App extends Component {
 				<NavBar user={user} handleLogout={this.handleLogout} />
 				<Form.Group>
 					<Form onSubmit={this.handleSubmit}>
-						<Form.Label htmlFor="animeTitle">Title</Form.Label>
 						<br />
 						<input
 							id="animeTitle"
 							type="text"
 							value={this.state.animeTitle}
 							onChange={this.handleChange}
+							placeholder="Search for anime..."
 						/>
 						<Button type="submit">Search</Button>
 					</Form>
