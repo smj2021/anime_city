@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Component } from 'react';
 
-
 class Review extends Component {
     state = {
         invalidForm: true,
