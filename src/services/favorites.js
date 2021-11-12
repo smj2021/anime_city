@@ -7,7 +7,7 @@ function deleteOne(id) {
             'Authorization': localStorage.getItem('token')
         }
     })
-    .then(res => console.log('res.json is ', res.json()))
+    .then(res => res.json())
 }
 
 export {

@@ -9,16 +9,16 @@ class Favorites extends Component {
     }
 
     componentDidMount() {
-        // it's port 3001 because that's the port our server is listening to
         this.fetchProfile();
     }
 
     handleDeleteFavorite = id => {
         favoritesService.deleteOne(id)
-        .then(this.render())
+        .then(this.fetchProfile())
     }
 
     fetchProfile() {
+        // it's port 3001 because that's the port our server is listening to
         fetch('http://localhost:3001/api/favorites', {
             headers: {
                 'Authorization': localStorage.getItem('token')
