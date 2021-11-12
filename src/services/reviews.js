@@ -1,15 +1,15 @@
-// const BASE_URL = '/api/reviews';
+const BASE_URL = 'http://localhost:3001/api/reviews';
 
-// const create = async newReviewData => {
-//     return fetch(BASE_URL, {
-//         method: 'POST',
-//         headers: { 'content-type': 'application/json' },
-//         body: JSON.stringify(newReviewData)
-//     }).then(res => res.json());
-// }
+function deleteOne(id) {
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    })
+        .then(res => res.json())
+}
 
-// const getAll() {
-//     return fetch(BASE_URL)
-//         .then(res => res.json());
-// }
-
+export {
+    deleteOne
+}
