@@ -4,7 +4,6 @@ import StarRating from '../../pages/Ratings/Ratings'
 
 import Reviews from '../../pages/Reviews/Reviews'
 
-
 class AnimeDetails extends Component {
     state = {
         // passed from <Link to={{pathname: `/anime`, state: { anime }}}>
