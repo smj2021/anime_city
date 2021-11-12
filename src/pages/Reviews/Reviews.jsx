@@ -12,6 +12,7 @@ class Review extends Component {
     formRef = React.createRef();
 
     handleSubmit = (e) => {
+        console.log(this.props)
         e.preventDefault();
         console.log(e.target.querySelector('textarea').value)
         fetch("http://localhost:3001/api/reviews/animeId", {
@@ -20,7 +21,11 @@ class Review extends Component {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             },
-            body: JSON.stringify({ content: e.target.querySelector('textarea').value })
+            body: JSON.stringify({
+                content: e.target.querySelector('textarea').value,
+                id: this.props.animeDetails.mal_id,
+                name: this.props.animeDetails.title
+            })
         })
             .then(res => res.json())
             .then(res => console.log(res))

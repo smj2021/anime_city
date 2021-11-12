@@ -12,7 +12,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-    console.log('req.user is:', req.user)
+    console.log('req.user is:', req.body)
     Review.create(req.body)
         .then(review => {
             console.log('req.user.profile is: ', review)
