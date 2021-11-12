@@ -10,7 +10,6 @@ import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import Users from '../Users/Users'
 
-
 class App extends Component {
 	constructor() {
 		super()
