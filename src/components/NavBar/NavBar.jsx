@@ -6,19 +6,19 @@ const NavBar = ({ user, handleLogout }) => {
 		<>
 			{user ? (
 				<nav>
-					<div>git a
+					<div>
 						<ul>
+							<li>Welcome, {user.name}</li>
 							<li>
 								<Link to="/">Home</Link>
 							</li>
 							<li>
 								<Link to="/favorites">Favorites</Link>
 							</li>
-							<li>Welcome, {user.name}</li>
 							<li>
 								<Link to="/users">Users</Link>
 							</li>
-							<li><Link to='' onClick={handleLogout}>LOG OUT</Link></li>
+							<li><Link to='' onClick={handleLogout}>Log Out</Link></li>
 						</ul>
 					</div>
 				</nav>

@@ -38,6 +38,7 @@ class Favorites extends Component {
                         <div key={idx}>
                             <h2>{favorite.title}</h2>
                             <img src={favorite.image} alt="" />
+                            <br />
                             <button onClick={() =>  {this.handleDeleteFavorite(favorite._id)}}>
                                 Remove
                             </button>

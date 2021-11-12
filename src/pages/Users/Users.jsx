@@ -14,7 +14,7 @@ class Users extends Component {
   render() {
     return (
       <>
-        <h1>Hello. This is a list of all the users.</h1>
+        <h1>Users</h1>
         {this.state.users.map((user) => (
           <p key={user._id}>{user.name} </p>
         ))}
