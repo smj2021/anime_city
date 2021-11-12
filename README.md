@@ -4,6 +4,9 @@
 
 ## Getting started
 
+[Click here to visit Anime City!](https://anime-city-mgm.herokuapp.com/)
+
+
 ***
 
 [Trello Board](https://trello.com/b/ehICj0Kr/weeb-city-anime)
