@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Component } from 'react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Review extends Component {
     state = {
@@ -38,9 +40,10 @@ class Review extends Component {
                         value={content}
                         onChange={this.handleChange} cols="30" rows="5" />
                     <div>
-                        <button type="submit"
+                        <Button type="submit"
                             className=""
-                            disabled={this.state.invalidForm}>Add a Review</button>
+                            disabled={this.state.invalidForm}>Add a Review
+                        </Button>
                     </div>
                 </form>
             </>
