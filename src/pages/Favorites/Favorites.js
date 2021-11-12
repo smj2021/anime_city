@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as favoritesService from '../../services/favorites'
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Favorites extends Component {
     state = {
@@ -39,9 +41,9 @@ class Favorites extends Component {
                             <h2>{favorite.title}</h2>
                             <img src={favorite.image} alt="" />
                             <br />
-                            <button onClick={() =>  {this.handleDeleteFavorite(favorite._id)}}>
+                            <Button onClick={() =>  {this.handleDeleteFavorite(favorite._id)}}>
                                 Remove
-                            </button>
+                            </Button>
                         </div>
                 ))
                 }
