@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = ({ user, handleLogout }) => {
@@ -9,21 +9,13 @@ const NavBar = ({ user, handleLogout }) => {
 			{user ? (
 				<Navbar bg="dark" variant="dark">
 					<Container>
-						<div>
-							<ul>
-								<li>{user.name}</li>
-								<li>
-									<Link to="/">Home</Link>
-								</li>
-								<li>
-									<Link to="/favorites">Favorites</Link>
-								</li>
-								<li>
-									<Link to="/users">Users</Link>
-								</li>
-								<li><Link to='' onClick={handleLogout}>Log Out</Link></li>
-							</ul>
-						</div>
+						<Navbar.Brand href="/">Anime City</Navbar.Brand>
+						<Nav className="me-auto">
+							<Nav.Link href="/">Home</Nav.Link>
+							<Nav.Link href="/favorites">Favorites</Nav.Link>
+							<Nav.Link href="/users">Users</Nav.Link>
+							<Nav.Link href="" onClick={handleLogout}>Log Out</Nav.Link>
+						</Nav>
 					</Container>
 				</Navbar>
 			) : (
