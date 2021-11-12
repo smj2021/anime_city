@@ -11,6 +11,7 @@ import * as authService from '../../services/authService'
 import Users from '../Users/Users'
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 class App extends Component {
 	constructor() {
 		super()
