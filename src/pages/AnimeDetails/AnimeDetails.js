@@ -47,7 +47,7 @@ class AnimeDetails extends Component {
                 <StarRating />
                 <Reviews />
                 <p><b>Synopsis: </b>{animeDetails.synopsis}</p>
-                <p><b>Type:</b>{animeDetails.type}</p>
+                <p><b>Type: </b>{animeDetails.type}</p>
                 {animeDetails.type === "TV"
                     ? <p><b>Episodes: </b>{animeDetails.episodes}</p>
                     : ''}
