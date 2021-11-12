@@ -12,6 +12,7 @@ import Users from '../Users/Users'
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+
 class App extends Component {
 	constructor() {
 		super()
@@ -68,15 +69,16 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
+				
 				<Form.Group>
 					<Form onSubmit={this.handleSubmit}>
-						<Form.Label htmlFor="animeTitle">Title</Form.Label>
 						<br />
 						<input
 							id="animeTitle"
 							type="text"
 							value={this.state.animeTitle}
 							onChange={this.handleChange}
+							placeholder="Search for anime..."
 						/>
 						<Button type="submit">Search</Button>
 					</Form>
