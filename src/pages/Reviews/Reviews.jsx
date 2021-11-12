@@ -78,8 +78,8 @@ class Review extends Component {
                         </div>
                     </form>
                     <h2>Reviews will go here</h2>
-                    {this.state.reviews.map((review, idx) => {
-                        return <p>{review.content}</p>
+                    {this.state.reviews.filter((review, idx) => {
+                        return this.props.animeDetails.mal_id === review.id
                     })}
                 </div>
             </>
