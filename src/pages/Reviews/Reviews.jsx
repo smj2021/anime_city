@@ -77,7 +77,10 @@ class Review extends Component {
                             </Button>
                         </div>
                     </form>
-                    <h1>Reviews will go here</h1>
+                    <h2>Reviews will go here</h2>
+                    {this.state.reviews.map((review, idx) => {
+                        return <p>{review.content}</p>
+                    })}
                 </div>
             </>
         )
