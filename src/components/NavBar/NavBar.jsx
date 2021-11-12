@@ -1,29 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = ({ user, handleLogout }) => {
 	return (
 		<>
 			{user ? (
-				<nav>
-					<div>
-						<ul>
-							<li>Welcome, {user.name}</li>
-							<li>
-								<Link to="/">Home</Link>
-							</li>
-							<li>
-								<Link to="/favorites">Favorites</Link>
-							</li>
-							<li>
-								<Link to="/users">Users</Link>
-							</li>
-							<li><Link to='' onClick={handleLogout}>Log Out</Link></li>
-						</ul>
-					</div>
-				</nav>
+				<Navbar bg="dark" variant="dark">
+					<Container>
+						<Navbar.Brand href="/">Anime City</Navbar.Brand>
+						<Nav className="me-auto">
+							<Nav.Link href="/">Home</Nav.Link>
+							<Nav.Link href="/favorites">Favorites</Nav.Link>
+							<Nav.Link href="/users">Users</Nav.Link>
+							<Nav.Link href="" onClick={handleLogout}>Log Out</Nav.Link>
+						</Nav>
+					</Container>
+				</Navbar>
 			) : (
-				<nav>
+				<Navbar>
 					<div>
 						<ul>
 							<li>
@@ -34,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
 							</li>
 						</ul>
 					</div>
-				</nav>
+				</Navbar>
 			)}
 		</>
 	)
