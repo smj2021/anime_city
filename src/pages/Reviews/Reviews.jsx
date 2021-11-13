@@ -2,6 +2,7 @@ import React, { useState, useEffect, Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import * as reviewsService from '../../services/reviews'
 
 class Review extends Component {
     state = {
@@ -54,11 +55,25 @@ class Review extends Component {
         })
     }
 
+    handleUpdateReview = async updatedReviewData => {
+		const updatedReview = await reviewsService.update(updatedReviewData);
+		const newReviewsArray = 
+	}
+
+
     render() {
         console.log('reviews are:', this.state.reviews)
         const { content } = this.state.formData;
         return (
-            <>Add Review
+            <>
+                <Route exact path='/update' render={({ location }) => 
+                    <UpdateReview 
+                        handleUpdateReview={this.handleUpdateReview}
+                        location={location} 
+                    />
+                } />	
+                
+                Add Review
                 <div>
                     <form ref={this.formRef} autocomplete='off'
                         onSubmit={this.handleSubmit}>
