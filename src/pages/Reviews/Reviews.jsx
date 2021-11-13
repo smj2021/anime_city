@@ -79,7 +79,9 @@ class Review extends Component {
                     </form>
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((review, idx) => {
-                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}</p>
+                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}
+                        <button>edit</button>
+                        </p>
                         // console.log(this.props.animeDetails.mal_id, review.id)
                     })}
                 </div>
