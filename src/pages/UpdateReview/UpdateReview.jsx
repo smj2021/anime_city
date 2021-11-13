@@ -10,12 +10,27 @@ class UpdateReview extends Component {
     formRef = React.createRef();
 
     handleSubmit = (e) => {
+        console.log(this.props)
         e.preventDefault();
         this.props.handleUpdateReview(this.state.formData);
     };
 
     handleChange = (e) => {
-        const formData = { ...this.state.formData, [e.target.content]: e.target.value }
+        const formData = { ...this.state.formData, [e.target.content]: e.target.value };
+        this.setState({
+            formData,
+            invalidForm: !this.formRef.current.checkValidity()
+        });
+    };
+
+    render(){
+        console.log()
+        const { content } = this.state.formData
+        return (
+            <>
+
+            </>
+        )
     }
 }
 
