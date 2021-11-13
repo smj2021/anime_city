@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
 import Favorites from '../../pages/Favorites/Favorites'
+import UpdateReview from '../../pages/UpdateReview/UpdateReview'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
@@ -69,7 +70,7 @@ class App extends Component {
 		return (
 			<>
 				<NavBar user={user} handleLogout={this.handleLogout} />
-				
+
 				<Form.Group>
 					<Form onSubmit={this.handleSubmit}>
 						<br />
@@ -125,6 +126,12 @@ class App extends Component {
 						<Favorites />
 					}
 				/>
+
+				<Route
+					exact path='/update'>
+						{/* < UpdateReview handleUpdateReview={handleUpdateReview} /> */}
+					</Route>
+					
 			</>
 		)
 	}
