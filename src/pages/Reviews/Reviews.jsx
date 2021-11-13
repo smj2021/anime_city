@@ -12,7 +12,6 @@ class Review extends Component {
     };
     formRef = React.createRef();
 
-
     // componentDidMount() {
     //     this.fetchReviews();
     // }
