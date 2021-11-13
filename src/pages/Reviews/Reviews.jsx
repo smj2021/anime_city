@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as reviewsService from '../../services/reviews'
+import * as reviewsService from '../../services/reviews';
+import UpdateReview from '../UpdateReview/UpdateReview';
 
 class Review extends Component {
     state = {
@@ -57,7 +58,11 @@ class Review extends Component {
 
     handleUpdateReview = async updatedReviewData => {
 		const updatedReview = await reviewsService.update(updatedReviewData);
-		const newReviewsArray = 
+		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
+        this.setState(
+            { reviews: newReviewsArray},
+            () => this.props.history.push('/')
+        );
 	}
 
 
@@ -72,7 +77,7 @@ class Review extends Component {
                         location={location} 
                     />
                 } />	
-                
+
                 Add Review
                 <div>
                     <form ref={this.formRef} autocomplete='off'
