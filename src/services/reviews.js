@@ -11,7 +11,7 @@ export function deleteOne(id) {
 }
 
 export function update(review) {
-    return fetch(`${BASE_URL}/${review}`, {
+    return fetch(`${BASE_URL}/${review._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(review)
