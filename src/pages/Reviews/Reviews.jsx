@@ -13,13 +13,14 @@ class Review extends Component {
     formRef = React.createRef();
 
     componentDidMount() {
-        fetch('http://localhost:3001/api/reviews')
-            .then(res => res.json())
-            .then(json => this.setState({
-                reviews: json
-            }))
+        // fetch('http://localhost:3001/api/reviews')
+        //     .then(res => res.json())
+        //     .then(json => this.setState({
+        //         reviews: json
+        //     }))
     }
 
+    
 
 
     handleSubmit = (e) => {
