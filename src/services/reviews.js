@@ -10,10 +10,12 @@ export function deleteOne(id) {
         .then(res => res.json())
 }
 
-export function update(review){
+export function update(review) {
     return fetch(`${BASE_URL}/${review}`, {
-        method: 'PUT'
-    })
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(review)
+    }).then(res => res.json());
 }
 
 
