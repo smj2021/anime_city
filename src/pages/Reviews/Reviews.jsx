@@ -12,16 +12,17 @@ class Review extends Component {
     };
     formRef = React.createRef();
 
-    componentDidMount() {
-        // fetch('http://localhost:3001/api/reviews')
-        //     .then(res => res.json())
-        //     .then(json => this.setState({
-        //         reviews: json
-        //     }))
+    // componentDidMount() {
+    //     this.fetchReviews();
+    // }
+
+    fetchReviews() {
+        fetch('http://localhost:3001/api/reviews')
+            .then(res => res.json())
+            .then(json => this.setState({
+                reviews: json
+            }));
     }
-
-    
-
 
     handleSubmit = (e) => {
         console.log(this.props)
@@ -40,7 +41,7 @@ class Review extends Component {
             })
         })
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => this.fetchReviews())
             .catch(err => console.log(err))
     };
 
@@ -51,8 +52,6 @@ class Review extends Component {
             invalidForm: !this.formRef.current.checkValidity
         })
     }
-
-
 
     render() {
         console.log('reviews are:', this.state.reviews)
