@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Review extends Component {
@@ -80,7 +81,15 @@ class Review extends Component {
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((review, idx) => {
                         return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}
-                        <button>edit</button>
+                            <Link
+                                className='btn btn-sm btn-warning'
+                                to={{
+                                    pathname: '/update',
+                                    state: { review }
+                                }}
+                            >
+                                Update
+                            </Link>
                         </p>
                         // console.log(this.props.animeDetails.mal_id, review.id)
                     })}

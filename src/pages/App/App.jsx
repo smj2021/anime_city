@@ -128,11 +128,10 @@ class App extends Component {
 				/>
 
 				<Route
-					exact path='/update'
-					render={() =>
-						< UpdateReview />
-					}
-				/>
+					exact path='/update'>
+						{/* < UpdateReview handleUpdateReview={handleUpdateReview} /> */}
+					</Route>
+					
 			</>
 		)
 	}
