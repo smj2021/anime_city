@@ -128,13 +128,15 @@ class App extends Component {
 				/>
 
 				<Route
-					exact path='/update'>
-						{/* < UpdateReview handleUpdateReview={handleUpdateReview} /> */}
-					</Route>
-					
+					exact path='/update'
+					render={({ location }) => 
+						<UpdateReview 
+							handleUpdateReview={this.handleUpdateReview} 
+							location={location} />
+				}
+				/>	
 			</>
 		)
 	}
 }
-//We the best
 export default App
