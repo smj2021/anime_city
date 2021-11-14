@@ -104,7 +104,7 @@ class Review extends Component {
                     </form>
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((review, idx) => {
-                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}
+                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : null}
                             <Link
                                 className='btn btn-sm btn-warning'
                                 to={{
