@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../../pages/Ratings/Ratings';
-import Reviews from '../../pages/Reviews/Reviews';
+import Reviews from '../Reviews/Reviews';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -13,6 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
 						<Nav className="me-auto">
 							<Nav.Link href="/">Home</Nav.Link>
 							<Nav.Link href="/favorites">Favorites</Nav.Link>
+							<Nav.Link href="/to-watch">To Watch</Nav.Link>
 							<Nav.Link href="/users">Users</Nav.Link>
 							<Nav.Link href="" onClick={handleLogout}>Log Out</Nav.Link>
 						</Nav>
