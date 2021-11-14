@@ -3,7 +3,7 @@ import { Profile } from '../models/profile.js'
 
 function index(req, res) {
     Profile.findById(req.user.profile)
-        .populate('favorites')
+        .populate('toWatch')
         .then(profile => {
             res.json(profile)
         })
@@ -15,19 +15,19 @@ function create(req, res) {
         .then(watch => {
             Profile.findById(req.user.profile)
                 .then(profile => {
-                    profile.favorites.push(favorite)
+                    profile.toWatch.push(watch)
                     profile.save()
                 })
         })
 }
 
-function deleteFavorite(req, res) {
+function deleteWatch(req, res) {
     Watch.findByIdAndDelete(req.params.id)
-        .then(favorite => res.json(favorite))
+        .then(watch => res.json(watch))
 }
 
 export {
     index,
     create,
-    deleteFavorite as delete
+    deleteWatch as delete
 }

@@ -12,7 +12,7 @@ const profileSchema = new mongoose.Schema(
     }],
     toWatch: [{
       type: Schema.Types.ObjectId,
-      ref: 'Favorite'
+      ref: 'Watch'
     }],
     // reviews: [{
     //   type: Schema.Types.ObjectId,

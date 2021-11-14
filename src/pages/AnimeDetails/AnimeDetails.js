@@ -85,7 +85,7 @@ class AnimeDetails extends Component {
                     <input type="hidden" name="image" value={animeDetails.image_url} />
                     <Button type="submit">Add to Favorites</Button>
                 </form>
-                <form onSubmit={this.addToFavorites}>
+                <form onSubmit={this.addToToWatch}>
                     <input type="hidden" name="id" value={animeDetails.mal_id} />
                     <input type="hidden" name="title" value={animeDetails.title} />
                     <input type="hidden" name="image" value={animeDetails.image_url} />
