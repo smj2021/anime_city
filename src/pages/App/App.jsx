@@ -12,7 +12,9 @@ import * as authService from '../../services/authService'
 import Users from '../Users/Users'
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import './App.css';
+import * as reviewsService from '../../services/reviews';
+
 
 class App extends Component {
 	constructor() {
@@ -23,7 +25,8 @@ class App extends Component {
 			animeTitle: '',
 			limit: "&limit=6",
 			searchURL: '',
-			user: authService.getUser()
+			user: authService.getUser(),
+			reviews: []
 		}
 	}
 
@@ -65,6 +68,15 @@ class App extends Component {
 		}
 	}
 
+	handleUpdateReview = async updatedReviewData => {
+		const updatedReview = await reviewsService.update(updatedReviewData);
+		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
+        this.setState(
+            { reviews: newReviewsArray},
+            () => this.props.history.push('/')
+        );
+	}
+
 	render() {
 		const { user } = this.state
 		return (
@@ -84,6 +96,14 @@ class App extends Component {
 						<Button type="submit">Search</Button>
 					</Form>
 				</Form.Group>
+
+				<Route exact path='/update' render={({ location }) =>
+					<UpdateReview 
+						history = {this.props.history}
+						handleUpdateReview={this.handleUpdateReview}
+						location={location} 
+					/>
+				} />
 
 				<Route exact path='/'>
 					<Landing user={user} animes={this.state.animes} />
@@ -126,15 +146,8 @@ class App extends Component {
 						<Favorites />
 					}
 				/>
-
-				<Route
-					exact path='/update'>
-						{/* < UpdateReview handleUpdateReview={handleUpdateReview} /> */}
-					</Route>
-					
 			</>
 		)
 	}
 }
-//We the best
 export default App

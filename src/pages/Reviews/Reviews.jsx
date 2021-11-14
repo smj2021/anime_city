@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UpdateReview from '../UpdateReview/UpdateReview';
+import * as reviewsService from '../../services/reviews';
 
 class Review extends Component {
     state = {
@@ -54,11 +56,26 @@ class Review extends Component {
         })
     }
 
+
+
+
+
     render() {
         console.log('reviews are:', this.state.reviews)
         const { content } = this.state.formData;
         return (
-            <>Add Review
+            <>
+                {/* <Route exact path='/update' render={({ location }) => 
+                    <div>
+                        <h1>hello</h1>
+                        <UpdateReview 
+                            handleUpdateReview={this.handleUpdateReview}
+                            location={location} 
+                            />
+                    </div>
+                } />	 */}
+
+                Add Review
                 <div>
                     <form ref={this.formRef} autocomplete='off'
                         onSubmit={this.handleSubmit}>
