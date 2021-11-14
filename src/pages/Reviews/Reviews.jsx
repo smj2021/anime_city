@@ -2,8 +2,8 @@ import React, { useState, useEffect, Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as reviewsService from '../../services/reviews';
 import UpdateReview from '../UpdateReview/UpdateReview';
+import * as reviewsService from '../../services/reviews';
 
 class Review extends Component {
     state = {
@@ -56,15 +56,8 @@ class Review extends Component {
         })
     }
 
-    // CONTINUE HERE
-    handleUpdateReview = async updatedReviewData => {
-		const updatedReview = await reviewsService.update(updatedReviewData);
-		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
-        this.setState(
-            { reviews: newReviewsArray},
-            () => this.props.history.push('/')
-        );
-	}
+
+
 
 
     render() {
@@ -72,12 +65,15 @@ class Review extends Component {
         const { content } = this.state.formData;
         return (
             <>
-                <Route exact path='/update' render={({ location }) => 
-                    <UpdateReview 
-                        handleUpdateReview={this.handleUpdateReview}
-                        location={location} 
-                    />
-                } />	
+                {/* <Route exact path='/update' render={({ location }) => 
+                    <div>
+                        <h1>hello</h1>
+                        <UpdateReview 
+                            handleUpdateReview={this.handleUpdateReview}
+                            location={location} 
+                            />
+                    </div>
+                } />	 */}
 
                 Add Review
                 <div>
