@@ -14,7 +14,7 @@ class UpdateReview extends Component {
         e.preventDefault();
         this.props.handleUpdateReview(this.state.formData);
         // this.props.history.push('/anime')
-        this.props.location.history.goBack()
+        this.props.history.goBack()
     };
 
     handleChange = (e) => {

@@ -44,10 +44,14 @@ function rating(req, res) {
 }
 
 function update(req, res) {
+    console.log('this is req.params.id ', req.params.id)
+    console.log('this is req.body ', req.body)
     Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((review) => {
+            console.log("review", review)
             res.json(review)
         })
+        .catch(err => console.log(err))
 }
 
 function deleteReview(req, res) {

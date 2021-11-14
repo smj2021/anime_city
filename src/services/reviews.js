@@ -13,7 +13,10 @@ export function deleteOne(id) {
 export function update(review) {
     return fetch(`${BASE_URL}/${review._id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('token')
+        },
         body: JSON.stringify(review)
     }).then(res => res.json());
 }

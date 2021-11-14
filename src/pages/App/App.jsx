@@ -70,10 +70,11 @@ class App extends Component {
 
 	handleUpdateReview = async updatedReviewData => {
 		const updatedReview = await reviewsService.update(updatedReviewData);
+		console.log(updatedReview);
 		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
         this.setState(
             { reviews: newReviewsArray},
-            () => this.props.history.push('/')
+            // () => this.props.history.push('/')
         );
 	}
 
