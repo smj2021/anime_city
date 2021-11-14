@@ -55,4 +55,5 @@ class Favorites extends Component {
     }
 }
 
+//testing comment
 export default Favorites;
