@@ -19,6 +19,10 @@ class Review extends Component {
     //     this.fetchReviews();
     // }
 
+    componentDidMount() {
+        this.fetchReviews()
+    }
+
     fetchReviews() {
         fetch('http://localhost:3001/api/reviews')
             .then(res => res.json())
@@ -77,8 +81,11 @@ class Review extends Component {
 
                 Add Review
                 <div>
-                    <form ref={this.formRef} autocomplete='off'
-                        onSubmit={this.handleSubmit}>
+                    <form 
+                        ref={this.formRef} 
+                        autocomplete='off'
+                        onSubmit={this.handleSubmit}
+                    >
                         <label htmlFor="reviewInput"
                             className="form-label"></label>
                         <textarea
