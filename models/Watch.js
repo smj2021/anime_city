@@ -12,10 +12,13 @@ const watchSchema = new Schema ({
     },
     title: {
         type: String
+    },
+    image: {
+        type: String
     }
 })
 
-const Watch = mongoose.model('Favorite', watchSchema)
+const Watch = mongoose.model('Watch', watchSchema)
 
 export {
     Watch

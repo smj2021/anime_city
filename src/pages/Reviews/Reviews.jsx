@@ -104,10 +104,12 @@ class Review extends Component {
                     </form>
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((review, idx) => {
-                        return <div>{parseInt(review.id) === this.props.animeDetails.mal_id 
-                                    ? <div> {review.content} <Link to={{pathname: '/update',state: { review }}}>Update</Link></div>
-                                    : ''}
-                                </div>
+                        return (
+                            <div>{parseInt(review.id) === this.props.animeDetails.mal_id 
+                                ? <div> {review.content} <Link to={{pathname: '/update',state: { review }}}>Update</Link></div>
+                                : ''}
+                            </div>
+                        )
                     })}
                 </div>
             </>

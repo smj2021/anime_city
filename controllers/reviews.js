@@ -1,4 +1,4 @@
-import { Review } from '../models/Review.js';
+import { Review } from '../models/review.js';
 import { Profile } from '../models/profile.js';
 
 function index(req, res) {

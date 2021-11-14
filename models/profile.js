@@ -10,6 +10,10 @@ const profileSchema = new mongoose.Schema(
       type: Schema.Types.ObjectId,
       ref: 'Favorite'
     }],
+    toWatch: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Watch'
+    }],
     // reviews: [{
     //   type: Schema.Types.ObjectId,
     //   ref: 'Review'
