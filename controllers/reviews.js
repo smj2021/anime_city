@@ -44,9 +44,9 @@ function rating(req, res) {
 }
 
 function update(req, res) {
-    console.log('this is req.params.id ', req.params.id)
+    console.log('this is req.params.animeId ', req.params.animeId)
     console.log('this is req.body ', req.body)
-    Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    Review.findByIdAndUpdate(req.params.animeId, req.body, { new: true })
         .then((review) => {
             console.log("review", review)
             res.json(review)
@@ -55,7 +55,7 @@ function update(req, res) {
 }
 
 function deleteReview(req, res) {
-    Review.findByIdAndDelete(req.params.id)
+    Review.findByIdAndDelete(req.params.animeId)
         .then(review => {
             res.json(review)
         })
