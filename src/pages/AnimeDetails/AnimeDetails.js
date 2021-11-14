@@ -45,7 +45,7 @@ class AnimeDetails extends Component {
             image: e.target.firstChild.nextSibling.nextSibling.value
         };
 
-        // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
+        // the path is /api/to-watch because our server.js has app.use('/api/to-watch', toWatchRouter)
         fetch('http://localhost:3001/api/to-watch', {
             method: 'POST',
             headers: {
