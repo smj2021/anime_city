@@ -19,6 +19,10 @@ class Review extends Component {
     //     this.fetchReviews();
     // }
 
+    componentDidMount() {
+        this.fetchReviews()
+    }
+
     fetchReviews() {
         fetch('http://localhost:3001/api/reviews')
             .then(res => res.json())
@@ -77,8 +81,11 @@ class Review extends Component {
 
                 Add Review
                 <div>
-                    <form ref={this.formRef} autocomplete='off'
-                        onSubmit={this.handleSubmit}>
+                    <form 
+                        ref={this.formRef} 
+                        autocomplete='off'
+                        onSubmit={this.handleSubmit}
+                    >
                         <label htmlFor="reviewInput"
                             className="form-label"></label>
                         <textarea
@@ -97,7 +104,7 @@ class Review extends Component {
                     </form>
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((review, idx) => {
-                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : ''}
+                        return <p>{parseInt(review.id) === this.props.animeDetails.mal_id ? review.content : null}
                             <Link
                                 className='btn btn-sm btn-warning'
                                 to={{
