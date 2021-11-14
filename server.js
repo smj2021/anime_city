@@ -7,6 +7,7 @@ import cors from 'cors'
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as favoritesRouter } from './routes/favorites.js'
+import { router as toWatchRouter } from './routes/toWatch.js'
 import { router as reviewsRouter } from './routes/reviews.js'
 import('./config/database.js')
 
@@ -21,6 +22,7 @@ app.use(express.json())
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/favorites', favoritesRouter)
+app.use('/api/to-watch', toWatchRouter)
 app.use('/api/reviews', reviewsRouter)
 
 

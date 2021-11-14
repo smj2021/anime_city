@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,18 +28,6 @@ const NavBar = ({ user, handleLogout }) => {
 						</Nav>
 					</Container>
 				</Navbar>
-
-
-					// <div>
-					// 	<ul>
-					// 		<li>
-					// 			<Link to="/login">Log In</Link>
-					// 		</li>
-					// 		<li>
-					// 			<Link to="/signup">Sign Up</Link>
-					// 		</li>
-					// 	</ul>
-					// </div>
 			)}
 		</>
 	)
