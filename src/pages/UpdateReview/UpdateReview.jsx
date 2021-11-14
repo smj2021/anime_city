@@ -13,7 +13,8 @@ class UpdateReview extends Component {
         console.log(this.props)
         e.preventDefault();
         this.props.handleUpdateReview(this.state.formData);
-        this.props.history.push('/anime')
+        // this.props.history.push('/anime')
+        this.props.location.history.goBack()
     };
 
     handleChange = (e) => {
@@ -49,7 +50,8 @@ class UpdateReview extends Component {
                             type="submit"
                             className=""
                             to="/anime"
-                            disabled={this.state.invalidForm}>
+                            disabled={this.state.invalidForm}
+                        >
                             Update Review
                         </Button>
                     </div>
