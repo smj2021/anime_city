@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
 import Favorites from '../../pages/Favorites/Favorites'
+import ToWatch from '../../pages/ToWatch/ToWatch'
 import UpdateReview from '../../pages/UpdateReview/UpdateReview'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
@@ -145,6 +146,13 @@ class App extends Component {
 					exact path='/favorites'
 					render={() =>
 						<Favorites />
+					}
+				/>
+
+				<Route
+					exact path='/to-watch'
+					render={() =>
+						<ToWatch />
 					}
 				/>
 			</>
