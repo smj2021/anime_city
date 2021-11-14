@@ -15,15 +15,17 @@ function create(req, res) {
     console.log('req.user is:', req.body)
     Review.create(req.body)
         .then(review => {
+            res.json(review)
             console.log('req.user.profile is: ', review)
-            Profile.findById(req.user.profile)
-                .then(profile => {
-                    profile.reviews.push(review)
-                    profile.save(function (err, obj) {
-                        console.log(err)
-                        res.json(review)
-                    })
-                })
+            //     Profile.findById(req.user.profile)
+            //         .then(profile => {
+            //             profile.reviews.push(review)
+            //             profile.save(function (err, obj) {
+            //                 console.log(err)
+            //                 res.json(review)
+            //             })
+            //         })
+            // })
         })
 }
 
