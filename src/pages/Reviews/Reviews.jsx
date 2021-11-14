@@ -56,6 +56,7 @@ class Review extends Component {
         })
     }
 
+    // CONTINUE HERE
     handleUpdateReview = async updatedReviewData => {
 		const updatedReview = await reviewsService.update(updatedReviewData);
 		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
