@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AnimeResults from '../../pages/AnimeResults/AnimeResults'
 import AnimeDetails from '../../pages/AnimeDetails/AnimeDetails'
 import Favorites from '../../pages/Favorites/Favorites'
-import ToWatch from '../ToWatch/ToWatch'
+import ToWatch from '../../pages/ToWatch/ToWatch'
 import UpdateReview from '../../pages/UpdateReview/UpdateReview'
 import { Route, Redirect } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
@@ -73,10 +73,10 @@ class App extends Component {
 		const updatedReview = await reviewsService.update(updatedReviewData);
 		console.log(updatedReview);
 		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
-        this.setState(
-            { reviews: newReviewsArray},
-            // () => this.props.history.push('/')
-        );
+		this.setState(
+			{ reviews: newReviewsArray },
+			// () => this.props.history.push('/')
+		);
 	}
 
 	render() {
@@ -100,10 +100,10 @@ class App extends Component {
 				</Form.Group>
 
 				<Route exact path='/update' render={({ location }) =>
-					<UpdateReview 
-						history = {this.props.history}
+					<UpdateReview
+						history={this.props.history}
 						handleUpdateReview={this.handleUpdateReview}
-						location={location} 
+						location={location}
 					/>
 				} />
 
